@@ -168,14 +168,14 @@
   /* Hero Decorative Bento — CSS shapes matching LAM logo */
   .hero-deco {
     position: absolute;
-    right: 5%; top: 50%; transform: translateY(-50%);
-    width: 420px; height: 420px;
+    right: 8%; top: 50%; transform: translateY(-50%);
+    width: 480px; height: 480px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
-    z-index: 0;
-    opacity: 0.6;
+    z-index: 2;
+    opacity: 0.85;
   }
   /* Organic float keyframes for individual blocks */
   @keyframes floatA {
@@ -196,26 +196,30 @@
   }
   .hd {
     border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
     transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
   }
   .hd:hover { transform: scale(1.08); opacity: 1 !important; }
   /* Row 1 — two greens + two small teals */
-  .hd-1 { grid-column: 1 / 2; grid-row: 1 / 2; background: #7fd85a; opacity: 0.85; animation: decoIn 0.6s 0.1s both, floatA 6s 1s ease-in-out infinite; }
-  .hd-2 { grid-column: 2 / 3; grid-row: 1 / 2; background: linear-gradient(135deg, #7fd85a, #25d3da); opacity: 0.75; animation: decoIn 0.6s 0.2s both, floatB 8s 1.2s ease-in-out infinite; }
-  .hd-3 { grid-column: 3 / 4; grid-row: 1 / 2; background: #40a8e7; opacity: 0.6; border-radius: 12px; animation: decoIn 0.6s 0.3s both, floatC 7s 1.4s ease-in-out infinite; }
-  .hd-4 { grid-column: 4 / 5; grid-row: 1 / 2; background: #25d3da; opacity: 0.55; border-radius: 12px; animation: decoIn 0.6s 0.35s both, floatD 10s 1s ease-in-out infinite; }
+  .hd-1 { grid-column: 1 / 2; grid-row: 1 / 2; background: rgba(127,216,90,0.25); opacity: 0.85; animation: decoIn 0.6s 0.1s both, floatA 6s 1s ease-in-out infinite; }
+  .hd-2 { grid-column: 2 / 3; grid-row: 1 / 2; background: linear-gradient(135deg, rgba(127,216,90,0.25), rgba(37,211,218,0.25)); opacity: 0.75; animation: decoIn 0.6s 0.2s both, floatB 8s 1.2s ease-in-out infinite; }
+  .hd-3 { grid-column: 3 / 4; grid-row: 1 / 2; background: rgba(64,168,231,0.25); opacity: 0.7; border-radius: 12px; animation: decoIn 0.6s 0.3s both, floatC 7s 1.4s ease-in-out infinite; }
+  .hd-4 { grid-column: 4 / 5; grid-row: 1 / 2; background: rgba(37,211,218,0.25); opacity: 0.65; border-radius: 12px; animation: decoIn 0.6s 0.35s both, floatD 10s 1s ease-in-out infinite; }
   /* Row 2 — green, gradient center, teal */
-  .hd-5 { grid-column: 1 / 2; grid-row: 2 / 3; background: #7fd85a; opacity: 0.7; animation: decoIn 0.6s 0.25s both, floatC 9s 1.3s ease-in-out infinite; }
-  .hd-6 { grid-column: 2 / 4; grid-row: 2 / 4; background: linear-gradient(160deg, #7fd85a 0%, #25d3da 60%, #40a8e7 100%); border-radius: 20px; opacity: 0.8; animation: decoIn 0.8s 0.15s both, floatD 11s 1.1s ease-in-out infinite; }
-  .hd-7 { grid-column: 4 / 5; grid-row: 2 / 3; background: #25d3da; opacity: 0.5; border-radius: 12px; animation: decoIn 0.6s 0.4s both, floatA 7.5s 1.5s ease-in-out infinite; }
+  .hd-5 { grid-column: 1 / 2; grid-row: 2 / 3; background: rgba(127,216,90,0.25); opacity: 0.8; animation: decoIn 0.6s 0.25s both, floatC 9s 1.3s ease-in-out infinite; }
+  .hd-6 { grid-column: 2 / 4; grid-row: 2 / 4; background: linear-gradient(160deg, rgba(127,216,90,0.4) 0%, rgba(37,211,218,0.35) 60%, rgba(64,168,231,0.3) 100%); border-radius: 20px; opacity: 0.9; box-shadow: 0 8px 32px rgba(37,211,218,0.12); animation: decoIn 0.8s 0.15s both, floatD 11s 1.1s ease-in-out infinite; }
+  .hd-7 { grid-column: 4 / 5; grid-row: 2 / 3; background: rgba(37,211,218,0.25); opacity: 0.65; border-radius: 12px; animation: decoIn 0.6s 0.4s both, floatA 7.5s 1.5s ease-in-out infinite; }
   /* Row 3 — left green */
-  .hd-8 { grid-column: 1 / 2; grid-row: 3 / 4; background: #7fd85a; opacity: 0.65; animation: decoIn 0.6s 0.3s both, floatB 6.5s 1.6s ease-in-out infinite; }
+  .hd-8 { grid-column: 1 / 2; grid-row: 3 / 4; background: rgba(127,216,90,0.25); opacity: 0.75; animation: decoIn 0.6s 0.3s both, floatB 6.5s 1.6s ease-in-out infinite; }
   /* Row 3–4 — tall right green */
-  .hd-9 { grid-column: 4 / 5; grid-row: 3 / 5; background: #7fd85a; opacity: 0.75; animation: decoIn 0.6s 0.45s both, floatA 8.5s 1.2s ease-in-out infinite; }
+  .hd-9 { grid-column: 4 / 5; grid-row: 3 / 5; background: rgba(127,216,90,0.25); opacity: 0.8; animation: decoIn 0.6s 0.45s both, floatA 8.5s 1.2s ease-in-out infinite; }
   /* Row 4 — bottom greens */
-  .hd-10 { grid-column: 1 / 2; grid-row: 4 / 5; background: #7fd85a; opacity: 0.7; animation: decoIn 0.6s 0.5s both, floatD 8s 1.7s ease-in-out infinite; }
-  .hd-11 { grid-column: 2 / 3; grid-row: 4 / 5; background: #7fd85a; opacity: 0.75; animation: decoIn 0.6s 0.55s both, floatC 7s 1.4s ease-in-out infinite; }
-  .hd-12 { grid-column: 3 / 4; grid-row: 4 / 5; background: #7fd85a; opacity: 0.8; animation: decoIn 0.6s 0.6s both, floatA 9s 1.8s ease-in-out infinite; }
+  .hd-10 { grid-column: 1 / 2; grid-row: 4 / 5; background: rgba(127,216,90,0.25); opacity: 0.75; animation: decoIn 0.6s 0.5s both, floatD 8s 1.7s ease-in-out infinite; }
+  .hd-11 { grid-column: 2 / 3; grid-row: 4 / 5; background: rgba(127,216,90,0.25); opacity: 0.8; animation: decoIn 0.6s 0.55s both, floatC 7s 1.4s ease-in-out infinite; }
+  .hd-12 { grid-column: 3 / 4; grid-row: 4 / 5; background: rgba(127,216,90,0.25); opacity: 0.85; animation: decoIn 0.6s 0.6s both, floatA 9s 1.8s ease-in-out infinite; }
   @keyframes decoIn {
     from { opacity: 0; transform: scale(0.7) translateY(16px); }
     to { opacity: var(--o, 0.7); transform: scale(1) translateY(0); }
@@ -2065,18 +2069,14 @@
   /* ── Hero deco responsive ── */
   @media (max-width: 1024px) {
     .hero-deco {
-      width: 320px; height: 320px;
-      right: 3%; opacity: 0.4;
+      width: 340px; height: 340px;
+      right: 3%; opacity: 0.6;
     }
   }
   @media (max-width: 640px) {
     .hero-deco {
-      width: 200px; height: 200px;
-      right: -20px; top: 80px; transform: none;
-      opacity: 0.3;
-      animation: none;
+      display: none;
     }
-    .hero-deco .hd { animation: none !important; }
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-deco, .hero-deco .hd { animation: none !important; }
@@ -2141,8 +2141,21 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <!-- Hero decorative grid — inspired by LAM logo -->
-  <!-- hero bento grid removed — logo moved to nav -->
+  <!-- Hero decorative grid — glassmorphism LAM logo -->
+  <div class="hero-deco">
+    <div class="hd hd-1"></div>
+    <div class="hd hd-2"></div>
+    <div class="hd hd-3"></div>
+    <div class="hd hd-4"></div>
+    <div class="hd hd-5"></div>
+    <div class="hd hd-6"></div>
+    <div class="hd hd-7"></div>
+    <div class="hd hd-8"></div>
+    <div class="hd hd-9"></div>
+    <div class="hd hd-10"></div>
+    <div class="hd hd-11"></div>
+    <div class="hd hd-12"></div>
+  </div>
   <div class="hero-grid"></div>
 
   <div class="hero-content">
