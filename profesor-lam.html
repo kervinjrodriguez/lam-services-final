@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profesor LAM | Academia de Sistemas de Bombeo — Puerto Rico</title>
+<meta name="description" content="Aprende sobre sistemas de bombeo con el Profesor LAM. Videos, tutoriales, tips técnicos y cursos para dueños de propiedades, técnicos e ingenieros en Puerto Rico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+    --black:      #0d1f0d;
+    --deep:       #ffffff;
+    --panel:      #f4f9f1;
+    --panel2:     #eef6ff;
+    --border:     #d0e8c8;
+    --green:      #7fd85a;
+    --green-dark: #2a7a1a;
+    --green-dim:  rgba(127,216,90,0.12);
+    --teal:       #25d3da;
+    --blue:       #40a8e7;
+    --text:       #0d1f0d;
+    --muted:      #6a8a6a;
+    --white:      #ffffff;
+    --accent:     #25d3da;
+    --cream:      #ffffff;
+  }
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  
+}
+
+.cursor      { width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10001; }
+.cursor-ring { width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10000;transition:all .3s;opacity:.6; }
+
+/* NAV */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:24px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(6,8,10,0.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(200,169,110,0.12);
+  transition:all .4s;
+}
+nav.scrolled { padding:16px 48px; }
+.nav-logo { display:flex;flex-direction:column;text-decoration:none; }
+.nav-logo-main { font-family: 'Syne', sans-serif;font-size:22px;letter-spacing: 2px;color:var(--gold);line-height:1; }
+.nav-logo-sub  { font-size: 13px;letter-spacing: 1.5px;color:var(--muted);text-transform:uppercase;margin-top:2px; }
+.nav-links { display:flex;gap:36px;list-style:none;align-items:center; }
+.nav-links a { font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;text-decoration:none;color:#b0c4d8;transition:color .3s;position:relative; }
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s; }
+.nav-links a:hover,.nav-links a.active { color:var(--gold); }
+.nav-links a:hover::after,.nav-links a.active::after { transform:scaleX(1); }
+.nav-cta { background:var(--gold);color:var(--black)!important;padding:10px 24px;font-size:10px!important;letter-spacing:3px!important;text-decoration:none;text-transform:uppercase;transition:background .3s!important;display:inline-block; }
+.nav-cta:hover { background:var(--gold-lt)!important; }
+.nav-cta::after { display:none!important; }
+
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+    background:var(--panel);border:1px solid var(--border);
+    padding:5px 10px;transition:border-color .3s;flex-shrink:0;
+  }
+  .lang-toggle:hover { border-color:rgba(200,169,110,0.4); }
+  .lang-es,.lang-en {
+    font-size: 13px;letter-spacing:2px;font-family: 'Inter', sans-serif;
+    text-transform:uppercase;color:var(--gold);transition:opacity .3s;
+  }
+  .lang-track {
+    width:38px;height:18px;background:var(--deep);border:1px solid var(--border);
+    border-radius:9px;position:relative;
+  }
+  .lang-slider {
+    width:16px;height:14px;background:var(--gold);border-radius:7px;
+    position:absolute;top:1px;left:1px;transition:transform .3s;
+  }
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; z-index:300; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+    background:rgba(6,8,10,0.98); z-index:200;
+    flex-direction:column; align-items:center; justify-content:center; gap:0;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform:uppercase; text-decoration:none; color:#b0c4d8;
+    padding:18px 40px; width:100%; text-align:center;
+    border-bottom:1px solid rgba(200,169,110,0.06);
+    transition:color 0.2s, background 0.2s;
+  }
+  .mobile-menu a:hover { color:var(--gold); background:rgba(200,169,110,0.04); }
+  .mobile-menu .mob-cta {
+    margin-top:20px; background:var(--gold); color:var(--black) !important;
+    font-size: 13px; letter-spacing: 1.5px; padding:16px 48px;
+    border:none; width:auto;
+  }
+  .mobile-menu .mob-lang {
+    margin-top:12px; display:flex; align-items:center; gap:12px;
+    font-size: 12px; letter-spacing: 1.5px; color:var(--gold);
+  }
+
+  
+  @media (max-width:640px) {
+    
+    .chatbot-toggle { bottom: 32px !important; right: 20px !important; }
+  }
+  @media (max-width: 640px) {
+    .hamburger { display:flex; }
+  }
+
+  
+  /* Better body readability */
+  body { line-height: 1.6; letter-spacing: -0.01em; }
+
+  /* Nav — lighter, cleaner */
+  nav {
+    background: rgba(13,21,38,0.97) !important;
+    border-bottom: 1px solid rgba(200,169,110,0.15) !important;
+  }
+  .nav-logo-main { font-family: 'Syne', sans-serif !important; font-size: 20px !important; letter-spacing: 3px !important; }
+  .nav-logo-sub  { font-size: 10px !important; letter-spacing: 2px !important; color: var(--muted) !important; }
+  .nav-links a   { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; font-weight: 500 !important; }
+
+  /* Section labels — less monospace aggressive */
+  .section-label {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: var(--gold) !important;
+  }
+
+  /* Section titles — bold, clear */
+  .section-title, h1, h2, h3 {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .section-title strong { font-weight: 800 !important; }
+
+  /* Body text — comfortable to read */
+  p, .lesson-desc, .phil-text, .path-desc, .tip-text, .faq-a p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+    color: #b8cce0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Cards — softer navy with subtle border */
+  .lesson-card, .phil-card, .path-card, .tip-card, .service-card {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px !important;
+  }
+  .lesson-card:hover, .phil-card:hover, .path-card:hover, .tip-card:hover {
+    background: #162040 !important;
+    border-color: rgba(200,169,110,0.3) !important;
+  }
+
+  /* Lesson title text readable */
+  .lesson-title, .phil-title, .path-title, .tip-title {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    color: var(--white) !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Meta labels on cards */
+  .lesson-meta, .path-level, .section-label::before {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+  }
+
+  /* Buttons — modern, clean */
+  .btn-primary, .nav-cta, .btn-submit, .btn-gold {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    font-size: 14px !important;
+    border-radius: 3px !important;
+  }
+  .tab-btn, .fmt-btn {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* FAQ readable */
+  .faq-q-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Form inputs */
+  .fi, .fa, .fs, input, textarea, select {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    border-radius: 3px !important;
+  }
+
+  /* Ticker text */
+  .ticker-track { font-family: 'Inter', sans-serif !important; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 2px !important; }
+
+  /* Hero badge */
+  .hero-badge, .hero-eyebrow {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Content tags on lesson cards */
+  .ctag {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 2px !important;
+  }
+
+  /* Hide custom cursor elements */
+  .cursor, .cursor-ring { display: none !important; }
+
+  /* Footer */
+  footer { background: #060d1a !important; }
+  .ft-desc { font-family: 'Inter', sans-serif !important; font-size: 14px !important; line-height: 1.7 !important; }
+  .ft-ul a { font-family: 'Inter', sans-serif !important; font-size: 13px !important; }
+  .ft-copy { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; }
+
+  /* Mobile menu */
+  .mobile-menu a { font-family: 'Inter', sans-serif !important; letter-spacing: 1px !important; font-size: 15px !important; }
+  .hamburger span { background: var(--white) !important; }
+
+  /* Newsletter */
+  .nl-title { font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .nl-sub, .nl-in { font-family: 'Inter', sans-serif !important; font-size: 14px !important; }
+  .nl-btn { font-family: 'Inter', sans-serif !important; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.5px !important; }
+
+  /* Quote section */
+  .quote-body { font-family: 'Syne', sans-serif !important; font-size: clamp(20px, 2.5vw, 32px) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+
+
+  
+  /* ══════════════════════════════════════
+     LAM BRAND EXACT COLORS v6
+  ══════════════════════════════════════ */
+
+  /* ── Base ── */
+  html, body { background: #ffffff !important; color: #0d1f0d !important; }
+
+  /* ── Nav ── */
+  nav {
+    background: rgba(255,255,255,0.98) !important;
+    border-bottom: 2px solid #7fd85a !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+  }
+  .nav-logo-main { color: #0d1f0d !important; font-weight: 800 !important; }
+  .nav-logo-sub  { color: #6a8a6a !important; }
+  .nav-links a   { color: #3d5a3d !important; font-weight: 500 !important; }
+  .nav-links a:hover, .nav-links a.active { color: #1a6a0a !important; }
+  .nav-cta {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: #6acc44 !important; }
+
+  /* ── Section label ── */
+  .section-label { color: #1a6a0a !important; }
+
+  /* ── Section titles & body ── */
+  .section-title, h1, h2, h3 { color: #0d1f0d !important; }
+  .section-sub, .section-desc { color: #3d5a3d !important; }
+  p { color: #3d5a3d !important; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(150deg, #ffffff 0%, #f0fae8 60%, #e8f8f9 100%) !important;
+    min-height: 100vh !important; position: relative !important;
+  }
+  .hero-bg {
+    background: radial-gradient(ellipse at 70% 40%, rgba(37,211,218,0.1), transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(127,216,90,0.08), transparent 50%) !important;
+    position: absolute !important; inset: 0 !important;
+  }
+  .hero-grid {
+    position: absolute !important; inset: 0 !important;
+    background-image:
+      linear-gradient(rgba(127,216,90,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64,168,231,0.05) 1px, transparent 1px) !important;
+    background-size: 60px 60px !important;
+  }
+  .hero-content { position: relative !important; z-index: 2 !important; }
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; }
+  .hero-badge {
+    border-color: rgba(127,216,90,0.5) !important;
+    color: #1a6a0a !important;
+    background: rgba(127,216,90,0.1) !important;
+  }
+  .stat-num { color: #1a6a0a !important; }
+  .stat-label { color: #6a8a6a !important; }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .btn-primary:hover, .btn-gold:hover { background: #6acc44 !important; }
+  .btn-outline {
+    border-color: #7fd85a !important; color: #1a6a0a !important;
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.1) !important; }
+
+  /* ── Sections — fill empty white areas ── */
+  .about      { background: #f4faf0 !important; }
+  .services   { background: #eef6ff !important; }
+  .process    { background: #f4faf0 !important; }
+  .gallery    { background: #eef6ff !important; }
+  .contact    { background: #f4faf0 !important; }
+  .lessons    { background: #eef6ff !important; }
+  .tips       { background: #f4faf0 !important; }
+  .ask        { background: #eef6ff !important; }
+  .faq        { background: #f4faf0 !important; }
+  .paths      { background: #eef6ff !important; }
+  .newsletter-section { background: #f4faf0 !important; }
+  .quote-section {
+    background: linear-gradient(135deg, #f0fae8, #e8f8f9) !important;
+    border-top: 1px solid rgba(127,216,90,0.2) !important;
+    border-bottom: 1px solid rgba(127,216,90,0.2) !important;
+  }
+  .quote-body { color: #0d1f0d !important; }
+  .quote-name { color: #1a6a0a !important; }
+
+  /* ── Cards — white on tinted bg ── */
+  .lesson-card, .service-card, .tip-card, .path-card, .phil-card, .faq-item {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04) !important;
+    border-radius: 8px !important;
+  }
+  .lesson-card:hover, .service-card:hover, .tip-card:hover, .path-card:hover {
+    border-color: #7fd85a !important;
+    box-shadow: 0 6px 24px rgba(127,216,90,0.18) !important;
+    transform: translateY(-2px) !important;
+  }
+  .lesson-title, .service-title, .tip-title, .path-title, .phil-title {
+    color: #0d1f0d !important;
+  }
+  .lesson-desc, .service-desc, .tip-text, .phil-text {
+    color: #4a6a4a !important;
+  }
+  .lesson-meta { color: #6a8a6a !important; }
+
+  /* ── Tags ── */
+  .ctag {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(26,122,10,0.2) !important;
+    color: #1a6a0a !important;
+  }
+  .ctag.blue {
+    background: rgba(64,168,231,0.1) !important;
+    border-color: rgba(64,168,231,0.3) !important;
+    color: #1a5a8a !important;
+  }
+  .ctag.teal {
+    background: rgba(37,211,218,0.1) !important;
+    border-color: rgba(37,211,218,0.3) !important;
+    color: #0a6a7a !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-wrap { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .ticker-track { color: #0d1f0d !important; font-weight: 600 !important; }
+
+  /* ── Process ── */
+  .process-num {
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+  }
+  .process-title { color: #0d1f0d !important; }
+  .process-desc  { color: #3d5a3d !important; }
+  .process-bar   { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .process-connector { background: rgba(127,216,90,0.3) !important; }
+
+  /* ── Service icons ── */
+  .service-icon-wrap {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(127,216,90,0.3) !important;
+  }
+
+  /* ── Forms ── */
+  .form-lbl { color: #0d1f0d !important; font-weight: 600 !important; }
+  input, textarea, select {
+    background: #ffffff !important;
+    border: 1px solid #c8dcc0 !important;
+    color: #0d1f0d !important;
+    border-radius: 4px !important;
+  }
+  input:focus, textarea:focus {
+    border-color: #7fd85a !important;
+    box-shadow: 0 0 0 3px rgba(127,216,90,0.15) !important;
+    outline: none !important;
+  }
+  input::placeholder, textarea::placeholder { color: #9ab09a !important; }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    color: #3d5a3d !important; background: transparent !important;
+    border-color: #c8dcc0 !important;
+  }
+  .tab-btn.active, .fmt-btn.active {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important;
+  }
+  .tab-btn:hover { color: #1a6a0a !important; border-color: #7fd85a !important; }
+
+  /* ── Newsletter ── */
+  .newsletter { background: linear-gradient(135deg, #7fd85a, #25d3da) !important; }
+  .nl-title, .nl-sub { color: #0d1f0d !important; }
+  .nl-btn { background: #0d1f0d !important; color: #7fd85a !important; border: none !important; }
+  .nl-in { border-color: rgba(0,0,0,0.15) !important; }
+
+  /* ── Lang toggle ── */
+  .lt-track { border-color: rgba(127,216,90,0.5) !important; }
+  .lt-knob { background: #7fd85a !important; }
+  .lt-label { color: #0d1f0d !important; }
+
+  /* ── Chatbot ── */
+  .chatbot-btn-main {
+    background: linear-gradient(135deg, #7fd85a, #25d3da) !important;
+    color: #0d1f0d !important;
+  }
+  .chatbot-float {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  }
+  .chatbot-float-title { color: #0d1f0d !important; }
+
+  /* ── Mobile menu ── */
+  .hamburger span { background: #0d1f0d !important; }
+  .mobile-menu {
+    background: rgba(255,255,255,0.99) !important;
+    border-top: 2px solid #7fd85a !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+  }
+  .mobile-menu a {
+    color: #0d1f0d !important;
+    border-bottom-color: rgba(127,216,90,0.12) !important;
+    font-weight: 500 !important;
+  }
+  .mobile-menu a:hover { color: #1a6a0a !important; }
+  .mobile-nav-cta { background: #7fd85a !important; color: #0d1f0d !important; }
+
+  /* ── Footer ── */
+  footer {
+    background: #0d1f0d !important;
+    border-top: 3px solid #7fd85a !important;
+  }
+  .ft-logo { color: #7fd85a !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+  .ft-h { color: #aacaaa !important; letter-spacing: 1.5px !important; }
+  .ft-ul a:hover { color: #7fd85a !important; }
+  .ft-divider { background: rgba(127,216,90,0.15) !important; }
+
+  /* ── FAQ ── */
+  .faq-q-text { color: #0d1f0d !important; font-weight: 500 !important; }
+  .faq-a p { color: #3d5a3d !important; }
+  .faq-icon { color: #7fd85a !important; }
+
+  /* ── Remove leftover dark backgrounds ── */
+  [style*="background: #060"] { background: #f4faf0 !important; }
+  [style*="background:#060"]  { background: #f4faf0 !important; }
+  [style*="background: #0d1"] { background: #f4faf0 !important; }
+  [style*="background:#0d1"]  { background: #f4faf0 !important; }
+  [style*="background: #111"] { background: #f4faf0 !important; }
+  [style*="background:#111"]  { background: #f4faf0 !important; }
+
+
+  /* ── VISIBILITY FIXES v6.1 ── */
+
+  /* Hero title — dark on light bg */
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; line-height: 1.7 !important; }
+  .hero-badge { color: #1a6a0a !important; border-color: rgba(127,216,90,0.4) !important; background: rgba(127,216,90,0.1) !important; }
+  .stat-num { color: #1a7a0a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .stat-label { color: #5a7a5a !important; font-size: 11px !important; letter-spacing: 1px !important; }
+  .stat-divider { background: rgba(127,216,90,0.3) !important; }
+  .stat-item { opacity: 1 !important; visibility: visible !important; }
+
+  /* All text that was white → dark */
+  .section-title, .section-title strong { color: #0d1f0d !important; }
+  .section-sub { color: #3d5a3d !important; }
+  .about-text p, .service-desc, .process-desc, .contact p { color: #4a6a4a !important; }
+
+  /* Service cards full visibility */
+  .service-card { opacity: 1 !important; visibility: visible !important; }
+  .service-title { color: #0d1f0d !important; font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .service-icon { opacity: 1 !important; }
+
+  /* Process steps */
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-title { color: #0d1f0d !important; }
+  .process-num { color: #1a7a0a !important; border-color: rgba(127,216,90,0.35) !important; }
+
+  /* Contact */
+  .ask-right .section-title { color: #0d1f0d !important; }
+  .contact-intro { color: #4a6a4a !important; }
+
+  /* Btn outline on light bg */
+  .btn-outline { 
+    border: 2px solid #1a7a0a !important; 
+    color: #1a7a0a !important; 
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.12) !important; }
+
+  /* Hero actions buttons visible */
+  .hero-actions { opacity: 1 !important; visibility: visible !important; }
+  .btn-primary { 
+    background: #7fd85a !important; color: #0d1f0d !important; 
+    font-weight: 700 !important; opacity: 1 !important;
+  }
+
+  /* Fix any elements with var(--white) text */
+  .hero-content * { visibility: visible !important; }
+  .hero-stats { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Nav text dark */
+  .nav-links a { color: #2a3a2a !important; }
+  .nav-logo-main { color: #0d1f0d !important; }
+  .nav-logo-sub { color: #5a7a5a !important; }
+
+  /* Section backgrounds solid — no transparent fallback */
+  .services   { background: #eef6ff !important; }
+  .about      { background: #f4faf0 !important; }
+  .process    { background: #f4faf0 !important; }
+  .contact    { background: #eef6ff !important; }
+  footer      { background: #0d1f0d !important; }
+
+  /* Footer text */  
+  .ft-logo { color: #7fd85a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .ft-h { color: #aacaaa !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+
+
+  /* ── FORCE ALL CONTENT VISIBLE (fix reveal + white-on-white) ── */
+
+  /* Disable scroll-based reveal — show everything */
+  .reveal { 
+    opacity: 1 !important; 
+    transform: none !important; 
+    visibility: visible !important;
+  }
+  .reveal.visible { opacity: 1 !important; transform: none !important; }
+
+  /* Process step titles white-on-light fix */
+  .process-title, .process-step h3, .step-title {
+    color: #0d1f0d !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-num { 
+    color: #1a7a0a !important; 
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.1) !important;
+    opacity: 1 !important;
+  }
+  .process-desc { color: #4a6a4a !important; opacity: 1 !important; }
+
+  /* Service cards */
+  .service-card, .service-title, .service-desc, .service-icon {
+    opacity: 1 !important; visibility: visible !important;
+  }
+  .service-title { color: #0d1f0d !important; }
+  .service-desc  { color: #4a6a4a !important; }
+
+  /* About section */
+  .about-text, .about-visual { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Section labels and titles */
+  .section-label { opacity: 1 !important; visibility: visible !important; color: #1a6a0a !important; }
+  .section-title { opacity: 1 !important; visibility: visible !important; color: #0d1f0d !important; }
+  
+  /* Contact section */
+  .contact-form, .ask-right, .ask-left { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Fix any element with opacity: 0 that should be visible */
+  .hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-stats,
+  .stat-item, .stat-num, .stat-label {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+  /* Gallery items */
+  .gallery-item { opacity: 1 !important; }
+
+  /* Ticker */
+  .ticker-wrap { opacity: 1 !important; }
+
+  /* All cards generally */
+  [class*="card"], [class*="step"], [class*="item"] {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+
+  /* ══════════════════════════════════════════
+     TYPOGRAPHY & DESIGN REFINEMENT v7
+     Plus Jakarta Sans + Fraunces
+  ══════════════════════════════════════════ */
+
+  /* ── Base typography ── */
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    letter-spacing: -0.01em !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  /* ── Display titles — Fraunces (editorial, elegant, has character) ── */
+  .hero-title,
+  .section-title,
+  h1, h2 {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* ── Hero title — big, confident, not blocky ── */
+  .hero-title {
+    font-size: clamp(42px, 6.5vw, 96px) !important;
+    font-weight: 600 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em !important;
+    color: #0d1f0d !important;
+  }
+  .hero-title em {
+    font-style: italic !important;
+    color: #1a8a0a !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: clamp(28px, 4vw, 52px) !important;
+    font-weight: 600 !important;
+    color: #0d1f0d !important;
+    margin-bottom: 16px !important;
+  }
+  .section-title strong {
+    font-weight: 700 !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── h3 — Jakarta Sans Bold (card titles, step titles) ── */
+  h3, .service-title, .process-title, .step-title,
+  .lesson-title, .path-title, .phil-title, .tip-title,
+  .faq-q-text, .nl-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.25 !important;
+    color: #0d1f0d !important;
+  }
+  .service-title { font-size: 18px !important; }
+  .process-title { font-size: 20px !important; color: #0d1f0d !important; }
+
+  /* ── Section labels — small caps, refined ── */
+  .section-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+    margin-bottom: 14px !important;
+    display: block !important;
+  }
+
+  /* ── Body text ── */
+  p, .service-desc, .process-desc, .lesson-desc,
+  .path-desc, .tip-text, .phil-text, .ft-desc,
+  .hero-subtitle, .section-sub, .contact-intro {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+    letter-spacing: -0.005em !important;
+  }
+  .hero-subtitle {
+    font-size: clamp(15px, 1.6vw, 18px) !important;
+    color: #4a6a4a !important;
+    max-width: 500px !important;
+  }
+  p { font-size: 15px !important; color: #4a6a4a !important; }
+
+  /* ── Nav ── */
+  .nav-logo-main {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.03em !important;
+    color: #0d1f0d !important;
+  }
+  .nav-logo-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    color: #7a9a7a !important;
+    text-transform: uppercase !important;
+  }
+  .nav-links a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    color: #2a4a2a !important;
+  }
+  .nav-cta {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+    padding: 10px 22px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit, .btn-outline {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.2px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Stats ── */
+  .stat-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(36px, 5vw, 60px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.04em !important;
+    color: #1a7a0a !important;
+  }
+  .stat-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #6a8a6a !important;
+    margin-top: 4px !important;
+  }
+
+  /* ── Process numbers ── */
+  .process-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: 28px !important;
+    color: #1a7a0a !important;
+    border: 1.5px solid rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    width: 56px !important; height: 56px !important;
+    border-radius: 50% !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+  }
+
+  /* ── Tags ── */
+  .ctag {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 3px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-track {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Hero badge ── */
+  .hero-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    padding: 8px 16px !important;
+    border-radius: 3px !important;
+    display: inline-block !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* ── Form labels ── */
+  .form-lbl, label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  input, textarea, select {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── Footer ── */
+  .ft-logo {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    letter-spacing: -0.02em !important;
+    color: #7fd85a !important;
+  }
+  .ft-h {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #aacaaa !important;
+  }
+  .ft-ul a, .ft-desc, .ft-copy {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #7aaa7a !important;
+  }
+
+  /* ── Mobile menu ── */
+  .mobile-menu a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.3px !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* ── Newsletter ── */
+  .nl-title {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: clamp(22px, 3vw, 32px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+  }
+  .nl-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    color: #2a4a2a !important;
+  }
+  .nl-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Quote ── */
+  .quote-body {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: clamp(20px, 2.5vw, 30px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+    line-height: 1.4 !important;
+  }
+  .quote-name {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── Chatbot ── */
+  .chatbot-float-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+  }
+  .chatbot-float-input, .chatbot-msg {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Contact info ── */
+  .contact-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  .contact-value {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #4a6a4a !important;
+  }
+
+
+  /* ══════════════════════════════════════
+     RESPONSIVE GRID & MOBILE FIXES
+  ══════════════════════════════════════ */
+
+  /* Grid layouts for desktop */
+  .phil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .paths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+  @media (max-width: 1024px) {
+    nav { padding: 16px 24px !important; }
+    section, .hero { padding-left: 24px !important; padding-right: 24px !important; }
+    .phil-grid { grid-template-columns: repeat(2, 1fr); }
+    .paths-grid { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+    .ask-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 14px 16px !important; }
+    .nav-links { display: none !important; }
+    .hamburger { display: flex !important; }
+    section { padding: 40px 16px !important; }
+
+    .hero { padding: 100px 16px 40px !important; min-height: auto !important; }
+    .hero-title { font-size: 32px !important; }
+
+    .phil-grid { grid-template-columns: 1fr; }
+    .paths-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .ask-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    .section-title { font-size: 28px !important; }
+
+    .chatbot-float { width: calc(100vw - 24px) !important; right: 12px !important; bottom: 80px !important; }
+    .chatbot-toggle { bottom: 24px !important; right: 16px !important; }
+
+    /* Ensure footer stacks */
+    .footer-main { grid-template-columns: 1fr !important; gap: 24px !important; }
+    .footer-bottom { flex-direction: column !important; text-align: center !important; }
+  }
+
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">L.A.M. Services</span>
+    <span class="nav-logo-sub">Pump Experts · Puerto Rico</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a></li>
+    <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+    <li><a href="productos.html"><span data-i18n="nav.productos">Productos</span></a></li>
+    <li><a href="profesor-lam.html" class="active">🎓 Profesor LAM</a></li>
+    <li><a href="inversionistas.html">🔒 Inversionistas</a></li>
+    <li><a href="https://wa.link/dni2dj" class="nav-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="lang-toggle" onclick="toggleLang()" title="ES / EN">
+    <span class="lang-es">ES</span>
+    <div class="lang-track"><div class="lang-slider"></div></div>
+    <span class="lang-en">EN</span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a>
+  <a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a>
+  <a href="productos.html"><span data-i18n="nav.productos">Productos</span></a>
+  <a href="profesor-lam.html"><span data-i18n="nav.academia">🎓 Academia</span></a>
+  <a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a>
+  <a href="inversionistas.html"><span data-i18n="nav.inversionistas">Inversionistas</span></a>
+  <a href="https://wa.link/dni2dj" class="mob-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a>
+  <div class="mob-lang">
+    <button onclick="toggleLang();closeMobileMenu()" style="background:none;border:none;cursor:pointer;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;color:var(--gold);">ES / EN</button>
+  </div>
+</div>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-bg-text">ACADEMIA</div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Academia de Ingeniería Hidráulica · L.A.M. Services</div>
+    <h1 class="hero-title">
+      Conocimiento que<br>
+      <strong>mueve el agua.</strong>
+    </h1>
+    <div class="hero-line"></div>
+    <p class="hero-desc">
+      El Profesor LAM reúne tres décadas de experiencia en campo y las convierte en educación accesible para todos — desde el propietario con una bomba que falla, hasta el ingeniero diseñando sistemas de alta presión.
+    </p>
+    <div class="hero-creds">
+      <div class="cred">
+        <div class="cred-val">30+</div>
+        <div class="cred-lbl">Años en el campo</div>
+      </div>
+      <div class="cred">
+        <div class="cred-val">24+</div>
+        <div class="cred-lbl">Lecciones disponibles</div>
+      </div>
+      <div class="cred">
+        <div class="cred-val">100%</div>
+        <div class="cred-lbl">Contenido gratuito</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#lecciones" class="btn-gold"><span data-i18n="ac.btn1">Explorar Lecciones</span></a>
+      <a href="#pregunta" class="btn-ghost"><span data-i18n="ac.btn2">Preguntarle al Profesor →</span></a>
+    </div>
+  </div>
+
+  <!-- ACADEMIC IDENTITY MARK -->
+  <div class="hero-right">
+    <div class="identity-mark">
+      <div class="ring-outer"></div>
+      <div class="ring-mid"></div>
+      <div class="ring-inner">
+        <div class="mark-prefix">Prof.</div>
+        <div class="mark-initial">LAM</div>
+        <div class="mark-divider"></div>
+        <div class="mark-name">Academia</div>
+        <div class="mark-sub">L.A.M. Services · Est. 1994</div>
+      </div>
+
+      <!-- Cardinal data points -->
+      <div class="data-point dp-top">
+        <div class="dp-val">30+</div>
+        <div class="dp-lbl">Años</div>
+      </div>
+      <div class="data-point dp-right">
+        <div class="dp-val">24+</div>
+        <div class="dp-lbl">Lecciones</div>
+      </div>
+      <div class="data-point dp-bottom">
+        <div class="dp-val">100%</div>
+        <div class="dp-lbl">Gratis</div>
+      </div>
+      <div class="data-point dp-left">
+        <div class="dp-val">3</div>
+        <div class="dp-lbl">Niveles</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Sistemas de Bombeo</span>
+    <span class="ticker-item">Cavitación y Diagnóstico</span>
+    <span class="ticker-item">Curvas de Rendimiento</span>
+    <span class="ticker-item">Selección de Equipos</span>
+    <span class="ticker-item">NPSH y Altura Dinámica</span>
+    <span class="ticker-item">Mantenimiento Preventivo</span>
+    <span class="ticker-item">Variadores de Frecuencia</span>
+    <span class="ticker-item">Sistemas NFPA 20</span>
+    <span class="ticker-item">Sistemas de Bombeo</span>
+    <span class="ticker-item">Cavitación y Diagnóstico</span>
+    <span class="ticker-item">Curvas de Rendimiento</span>
+    <span class="ticker-item">Selección de Equipos</span>
+    <span class="ticker-item">NPSH y Altura Dinámica</span>
+    <span class="ticker-item">Mantenimiento Preventivo</span>
+    <span class="ticker-item">Variadores de Frecuencia</span>
+    <span class="ticker-item">Sistemas NFPA 20</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="inner">
+    <div class="section-label">Por Qué Existe la Academia</div>
+    <h2 class="section-title">La <strong>Filosofía</strong> del Profesor LAM</h2>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="phil-num">I</div>
+        <div class="phil-title">Rigor Técnico sin Concesiones</div>
+        <div class="phil-text">Cada lección está basada en física real, normas vigentes y décadas de trabajo en campo. No enseñamos atajos — enseñamos fundamentos que nunca caducan, respaldados por 500+ proyectos reales en Puerto Rico.</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">II</div>
+        <div class="phil-title">Accesibilidad Total</div>
+        <div class="phil-text">El conocimiento técnico no debería estar reservado para quienes pueden pagar por él. El dueño de una casa en Ponce merece entender su sistema tanto como el ingeniero en Hato Rey. Todo el contenido es gratuito.</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">III</div>
+        <div class="phil-title">Hecho para Puerto Rico</div>
+        <div class="phil-text">Las condiciones de PR son únicas — salitre, calor, terreno irregular, cortes de AEE, agua de pozo. Nuestras lecciones contemplan la realidad local, no casos de libro de texto diseñados para otro clima y otra infraestructura.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHS -->
+<section class="paths">
+  <div class="inner">
+    <div class="section-label">Rutas de Aprendizaje</div>
+    <h2 class="section-title">Escoge tu <strong>Punto de Entrada</strong></h2>
+    <div class="paths-grid">
+
+      <div class="path-card lv-b">
+        <div class="path-watermark">I</div>
+        <div class="path-level">Nivel Básico</div>
+        <div class="path-title">Dueño de Propiedad</div>
+        <div class="path-subtitle">Sin conocimiento previo requerido</div>
+        <div class="path-desc">¿Tu bomba no arranca, hace ruido o no da presión? Aprende a identificar síntomas, qué preguntas hacerle al técnico y cómo evitar ser cobrado de más por problemas simples.</div>
+        <div class="path-topics">
+          <div class="topic"><div class="topic-dot"></div>Cómo funciona una bomba doméstica</div>
+          <div class="topic"><div class="topic-dot"></div>Señales de problemas comunes</div>
+          <div class="topic"><div class="topic-dot"></div>Mantenimiento básico que puedes hacer tú</div>
+          <div class="topic"><div class="topic-dot"></div>Cuándo llamar al técnico — y qué decirle</div>
+        </div>
+        <div class="path-cta">Comenzar aquí →</div>
+      </div>
+
+      <div class="path-card lv-i">
+        <div class="path-watermark">II</div>
+        <div class="path-level">Nivel Intermedio</div>
+        <div class="path-title">Técnico & Plomero</div>
+        <div class="path-subtitle">Conocimiento básico de plomería requerido</div>
+        <div class="path-desc">Diagnóstico avanzado, selección correcta de equipos, mejores prácticas de instalación y las normas locales y federales que debes conocer para trabajar en Puerto Rico.</div>
+        <div class="path-topics">
+          <div class="topic"><div class="topic-dot"></div>Diagnóstico y solución de fallas complejas</div>
+          <div class="topic"><div class="topic-dot"></div>Selección del equipo correcto para cada caso</div>
+          <div class="topic"><div class="topic-dot"></div>Instalación según estándares del fabricante</div>
+          <div class="topic"><div class="topic-dot"></div>Normas NFPA y regulaciones locales de PR</div>
+        </div>
+        <div class="path-cta">Comenzar aquí →</div>
+      </div>
+
+      <div class="path-card lv-a">
+        <div class="path-watermark">III</div>
+        <div class="path-level">Nivel Avanzado</div>
+        <div class="path-title">Ingeniero & Diseñador</div>
+        <div class="path-subtitle">Base en hidráulica y termodinámica</div>
+        <div class="path-desc">Diseño de sistemas desde cero: curvas de bombas, cálculo de TDH, análisis de NPSH, configuraciones en paralelo y serie, y optimización energética con variadores de frecuencia.</div>
+        <div class="path-topics">
+          <div class="topic"><div class="topic-dot"></div>Curvas de bomba, sistema y punto de operación</div>
+          <div class="topic"><div class="topic-dot"></div>Cálculo riguroso de TDH y pérdidas</div>
+          <div class="topic"><div class="topic-dot"></div>Análisis de NPSH disponible vs. requerido</div>
+          <div class="topic"><div class="topic-dot"></div>Optimización energética con VFD</div>
+        </div>
+        <div class="path-cta">Comenzar aquí →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BIBLIOTECA ACADÉMICA ══════════ -->
+<section class="lessons" id="lecciones" style="background:var(--deep);padding:40px 48px;">
+<div class="inner">
+
+  <div class="section-label"><span data-i18n="ac.lib.label">Biblioteca Completa</span></div>
+  <h2 class="section-title">Contenido del <strong>Profesor LAM</strong></h2>
+  <p style="font-family: 'Inter', sans-serif;font-size:17px;color:#90aac4;max-width:640px;margin-bottom:40px;line-height:1.7;">Videos, podcasts y artículos técnicos organizados de menor a mayor complejidad. Cada pieza de contenido es independiente — entra donde te sientas cómodo.</p>
+
+  <!-- FORMAT FILTER -->
+  <div style="display:flex;gap:0;border:1px solid var(--border);width:fit-content;margin-bottom:32px;">
+    <button class="fmt-btn active" onclick="filterFmt('all',this)"><span data-i18n="ac.fmt.all">Todo</span></button>
+    <button class="fmt-btn" onclick="filterFmt('video',this)">📹 Video</button>
+    <button class="fmt-btn" onclick="filterFmt('podcast',this)">🎙️ Podcast</button>
+    <button class="fmt-btn" onclick="filterFmt('articulo',this)">📄 Artículo</button>
+  </div>
+
+  <!-- LEVEL TABS -->
+  <div class="lessons-tabs">
+    <button class="tab-btn active" onclick="switchTab('basico',this)"><span data-i18n="ac.tab.basico">🟢 Básico</span></button>
+    <button class="tab-btn" onclick="switchTab('intermedio',this)"><span data-i18n="ac.tab.intermedio">🟡 Intermedio</span></button>
+    <button class="tab-btn" onclick="switchTab('avanzado',this)"><span data-i18n="ac.tab.avanzado">🔴 Avanzado</span></button>
+    <button class="tab-btn" onclick="switchTab('tips',this)"><span data-i18n="ac.tab.tips">⚡ Tips Rápidos</span></button>
+  </div>
+
+  <!-- ═══ BÁSICO ═══ -->
+  <div class="tab-content active" id="tab-basico">
+
+    <!-- VIDEO B01 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">01</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">8 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-01 · Fundamentos · Video</div>
+        <div class="lesson-title">¿Cómo Funciona una Bomba de Agua?</div>
+        <div class="lesson-desc">Desde el pozo hasta tu pluma — el viaje completo del agua en tu hogar. Explicación visual con diagrama animado: succión, impulsión, presión y descarga.</div>
+        <div class="content-tags"><span class="ctag">Fundamentos</span><span class="ctag">Residencial</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST B02 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">02</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="podcast-waves">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="lesson-dur">15 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-02 · Diagnóstico · Podcast</div>
+        <div class="lesson-title">Mi Bomba Hace Ruido: ¿Qué Me Está Diciendo?</div>
+        <div class="lesson-desc">Golpes de ariete, zumbidos, chirridos, chasquidos — cada sonido es un mensaje. El Profesor LAM los clasifica todos con ejemplos de audio reales de campo.</div>
+        <div class="content-tags"><span class="ctag">Audio</span><span class="ctag">Diagnóstico</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO B03 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">03</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="article-lines">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="lesson-dur">6 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-03 · Problemas Comunes · Artículo</div>
+        <div class="lesson-title">Baja Presión en Casa: Diagnóstico Paso a Paso</div>
+        <div class="lesson-desc">Guía escrita con checklist descargable. 7 causas ordenadas de más a menos frecuente en Puerto Rico, con instrucciones para verificar cada una sin herramientas especiales.</div>
+        <div class="content-tags"><span class="ctag">Checklist</span><span class="ctag">Presión</span></div>
+      </div>
+    </div>
+
+    <!-- VIDEO B04 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">04</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">11 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-04 · Tipos de Bomba · Video</div>
+        <div class="lesson-title">Centrífuga vs Sumergible vs Periférica: ¿Cuál Tienes Tú?</div>
+        <div class="lesson-desc">Reconoce visualmente el tipo de bomba instalada en tu propiedad. Diferencias físicas, dónde se instalan, para qué sirven y cuál es la más común en Puerto Rico.</div>
+        <div class="content-tags"><span class="ctag">Tipos</span><span class="ctag">Visual</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST B05 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">05</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="podcast-waves">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="lesson-dur">22 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-05 · Mantenimiento · Podcast</div>
+        <div class="lesson-title">Episodio 1: Lo Que Nadie te Dijo Sobre tu Tanque de Presión</div>
+        <div class="lesson-desc">El tanque de presión es el componente más ignorado del sistema. Por qué se daña, cómo saber si el suyo está bien y la revisión de 5 minutos que puede salvarle la bomba.</div>
+        <div class="content-tags"><span class="ctag">Tanque</span><span class="ctag">Mantenimiento</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO B06 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">06</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-b">Básico</div>
+        <div class="article-lines">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="lesson-dur">4 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">B-06 · Puerto Rico · Artículo</div>
+        <div class="lesson-title">Por Qué el Agua de la AAA Afecta Tu Bomba Diferente</div>
+        <div class="lesson-desc">El cloro, la cal y la salinidad del agua municipal de Puerto Rico degradan sellos y rodamientos más rápido que en otros países. Lo que debe saber todo propietario.</div>
+        <div class="content-tags"><span class="ctag">Puerto Rico</span><span class="ctag">AAA</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ INTERMEDIO ═══ -->
+  <div class="tab-content" id="tab-intermedio">
+
+    <!-- VIDEO I01 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">01</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">22 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-01 · Fenómenos · Video</div>
+        <div class="lesson-title">Cavitación: Qué Es, Cómo Suena y Cómo Eliminarla</div>
+        <div class="lesson-desc">El enemigo número uno de las bombas. Visualización en cámara lenta del colapso de burbujas, sus causas reales en campo y el procedimiento de corrección definitivo.</div>
+        <div class="content-tags"><span class="ctag">Cavitación</span><span class="ctag">Hidráulica</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO I02 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">02</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">10 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-02 · Selección · Artículo</div>
+        <div class="lesson-title">Cómo Seleccionar la Bomba Correcta: La Guía Completa</div>
+        <div class="lesson-desc">Caudal requerido, altura manométrica, tipo de fluido, servicio y presupuesto — la hoja de trabajo que usan nuestros ingenieros para seleccionar equipos en campo, adaptada para Puerto Rico.</div>
+        <div class="content-tags"><span class="ctag">Selección</span><span class="ctag">Ingeniería</span><span class="ctag">Hoja de trabajo</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST I03 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">03</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">34 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-03 · Componentes · Podcast</div>
+        <div class="lesson-title">Episodio 2: Sellos Mecánicos — El Punto Más Débil del Sistema</div>
+        <div class="lesson-desc">Los sellos mecánicos son la pieza más sustituida en bombas. En este episodio el Profesor LAM explica los 4 tipos principales, cuándo falla cada uno y cómo especificar el reemplazo correcto.</div>
+        <div class="content-tags"><span class="ctag">Sellos</span><span class="ctag">Mantenimiento</span></div>
+      </div>
+    </div>
+
+    <!-- VIDEO I04 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">04</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">28 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-04 · Instalación · Video</div>
+        <div class="lesson-title">Instalación de Bomba Centrífuga: De Cero a Cebado</div>
+        <div class="lesson-desc">Instalación completa en video real de obra. Alineación, torque de pernos, conexiones eléctricas, cebado inicial y verificación de punto de operación — 30 años de experiencia en 28 minutos.</div>
+        <div class="content-tags"><span class="ctag">Instalación</span><span class="ctag">Campo real</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO I05 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">05</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">8 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-05 · Mantenimiento · Artículo</div>
+        <div class="lesson-title">Plan de Mantenimiento Preventivo: El Protocolo LAM</div>
+        <div class="lesson-desc">Calendario de mantenimiento mensual, trimestral y anual usado por L.A.M. Services en sus contratos de servicio. Incluye tablas de verificación, valores normales y señales de alerta temprana.</div>
+        <div class="content-tags"><span class="ctag">Preventivo</span><span class="ctag">Protocolo</span><span class="ctag">Tablas</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST I06 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">06</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-i">Intermedio</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">41 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">I-06 · Sistemas · Podcast</div>
+        <div class="lesson-title">Episodio 3: Sistemas Booster — Cuándo los Necesitas y Cuándo No</div>
+        <div class="lesson-desc">Los sistemas de presurización son lo más vendido en PR pero también lo más mal instalado. Criterios reales para decidir si su edificio necesita un booster o si el problema tiene otra solución más económica.</div>
+        <div class="content-tags"><span class="ctag">Booster</span><span class="ctag">Edificios</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ AVANZADO ═══ -->
+  <div class="tab-content" id="tab-avanzado">
+
+    <!-- VIDEO A01 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">01</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">45 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-01 · Hidráulica · Video</div>
+        <div class="lesson-title">Curvas de Bomba y Sistema: Análisis Completo con Ejemplos</div>
+        <div class="lesson-desc">La intersección de la curva de bomba y la curva del sistema define todo. Construcción de curvas desde datos de campo, efecto de la viscosidad, paralelismo de bombas y punto de operación real.</div>
+        <div class="content-tags"><span class="ctag">Curvas</span><span class="ctag">Hidráulica</span><span class="ctag">Diseño</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO A02 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">02</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">15 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-02 · Cálculo · Artículo Técnico</div>
+        <div class="lesson-title">Cálculo de TDH: Metodología Rigurosa con Casos Reales de PR</div>
+        <div class="lesson-desc">Total Dynamic Head paso a paso. Pérdidas por fricción con Darcy-Weisbach, coeficientes de accesorios, elevación estática y presión requerida. Tres ejemplos resueltos: casa, edificio de 8 pisos y planta industrial.</div>
+        <div class="content-tags"><span class="ctag">TDH</span><span class="ctag">Fricción</span><span class="ctag">Cálculo</span><span class="ctag">Fórmulas</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST A03 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">03</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">52 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-03 · Energía · Podcast</div>
+        <div class="lesson-title">Episodio 4: VFDs — Configuración, Protecciones y Trampas Comunes</div>
+        <div class="lesson-desc">Variadores de frecuencia mal configurados son más peligrosos que no tenerlos. Parámetros críticos de arranque, frecuencias de resonancia, protecciones de motor y los 5 errores que cuestan más caros en campo.</div>
+        <div class="content-tags"><span class="ctag">VFD</span><span class="ctag">Energía</span><span class="ctag">Configuración</span></div>
+      </div>
+    </div>
+
+    <!-- VIDEO A04 -->
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">04</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">60 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-04 · NFPA 20 · Video</div>
+        <div class="lesson-title">Diseño de Sistemas Contra Incendios: NFPA 20 desde Cero</div>
+        <div class="lesson-desc">El estándar completo explicado por un ingeniero certificado. Caudal de diseño, curvas de aceptación, selección de bomba principal vs jockey, pruebas de aceptación UL y los puntos que más fallan en las inspecciones de PR.</div>
+        <div class="content-tags"><span class="ctag">NFPA 20</span><span class="ctag">Incendios</span><span class="ctag">Certificación</span></div>
+      </div>
+    </div>
+
+    <!-- ARTÍCULO A05 -->
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">05</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">12 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-05 · Optimización · Artículo Técnico</div>
+        <div class="lesson-title">Auditoría Energética de Sistemas de Bombeo: Metodología LAM</div>
+        <div class="lesson-desc">Cómo medir el consumo real de un sistema instalado, calcular la eficiencia del punto de operación vs el BEP de la bomba, y cuantificar el ahorro potencial de un VFD o sustitución de impulsores.</div>
+        <div class="content-tags"><span class="ctag">Auditoría</span><span class="ctag">BEP</span><span class="ctag">Eficiencia</span></div>
+      </div>
+    </div>
+
+    <!-- PODCAST A06 -->
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">06</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-a">Avanzado</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">68 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">A-06 · Diseño de Sistemas · Podcast</div>
+        <div class="lesson-title">Episodio 5: Diseño de Sistemas Municipales de Agua Potable</div>
+        <div class="lesson-desc">Los proyectos más complejos que maneja L.A.M. Services. Estaciones de bombeo para distribución municipal, redundancia N+1, SCADA, monitoreo remoto y el impacto de los cortes de AEE en la infraestructura crítica de PR.</div>
+        <div class="content-tags"><span class="ctag">Municipal</span><span class="ctag">SCADA</span><span class="ctag">Infraestructura</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ TIPS RÁPIDOS ═══ -->
+  <div class="tab-content" id="tab-tips">
+
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">001</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">2 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #001 · Instalación</div>
+        <div class="lesson-title">Verifica la Dirección de Rotación Siempre</div>
+        <div class="lesson-desc">El error #1 en instalaciones nuevas. Una bomba al revés da 50% del caudal y se daña. Cómo verificarlo en 30 segundos con una mano.</div>
+        <div class="content-tags"><span class="ctag">Instalación</span></div>
+      </div>
+    </div>
+
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">002</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">4 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #002 · Diagnóstico</div>
+        <div class="lesson-title">Motor Caliente: La Regla del 40°C sobre Ambiente</div>
+        <div class="lesson-desc">¿Cuándo es "demasiado caliente"? La prueba de la palma y por qué 80°C en la carcasa no siempre es problema pero 60°C en ambiente frío sí puede serlo.</div>
+        <div class="content-tags"><span class="ctag">Temperatura</span></div>
+      </div>
+    </div>
+
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">003</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">3 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #003 · Eficiencia</div>
+        <div class="lesson-title">Por Qué Estrangular la Descarga Desperdicia Dinero</div>
+        <div class="lesson-desc">Muchos técnicos "regulan" el caudal con la válvula de descarga. El error termodinámico detrás de esa práctica y la única alternativa correcta.</div>
+        <div class="content-tags"><span class="ctag">Eficiencia</span></div>
+      </div>
+    </div>
+
+    <div class="lesson-card fmt-card" data-fmt="video">
+      <div class="lesson-thumb">
+        <div class="lesson-thumb-bg"></div>
+        <div class="lesson-num-bg">004</div>
+        <div class="fmt-type-badge fmt-video">📹 Video</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="play-btn">▶</div>
+        <div class="lesson-dur">3 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #004 · Puerto Rico</div>
+        <div class="lesson-title">Cómo Proteger tu Bomba Durante un Apagón de la AEE</div>
+        <div class="lesson-desc">Los arranques bruscos tras apagones prolongados son la causa #1 de quema de motores en PR. El protector de voltaje correcto y cómo instalarlo bien.</div>
+        <div class="content-tags"><span class="ctag">AEE</span><span class="ctag">Protección</span></div>
+      </div>
+    </div>
+
+    <div class="lesson-card fmt-card" data-fmt="articulo">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0c1018,#0f1822);">
+        <div class="lesson-num-bg">005</div>
+        <div class="fmt-type-badge fmt-art">📄 Artículo</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="article-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">3 min leer</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #005 · Mantenimiento</div>
+        <div class="lesson-title">La Pre-carga del Tanque de Presión: El Ajuste que Todos Olvidan</div>
+        <div class="lesson-desc">El tanque de presión necesita pre-carga de aire calibrada al sistema. Cómo medirla, cuándo ajustarla y por qué un tanque sin pre-carga arruina la bomba en semanas.</div>
+        <div class="content-tags"><span class="ctag">Tanque</span><span class="ctag">Pre-carga</span></div>
+      </div>
+    </div>
+
+    <div class="lesson-card fmt-card" data-fmt="podcast">
+      <div class="lesson-thumb" style="background:linear-gradient(135deg,#0a1520,#111f30);">
+        <div class="lesson-num-bg">006</div>
+        <div class="fmt-type-badge fmt-podcast">🎙️ Podcast</div>
+        <div class="lesson-badge b-t">Tip</div>
+        <div class="podcast-waves"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="lesson-dur">6 min</div>
+      </div>
+      <div class="lesson-body">
+        <div class="lesson-meta">Tip #006 · Costos</div>
+        <div class="lesson-title">Cuánto Debe Costar una Revisión de Bomba en Puerto Rico</div>
+        <div class="lesson-desc">Precios reales de mercado 2025 para revisión básica, overhaul completo y reemplazo. Cómo saber si te están cobrando de más — o de menos, que también es señal de alerta.</div>
+        <div class="content-tags"><span class="ctag">Costos</span><span class="ctag">PR 2025</span></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- TIPS GRID -->
+<section class="tips">
+  <div class="inner">
+    <div class="section-label">Sabiduría de Campo</div>
+    <h2 class="section-title">8 Reglas del <strong>Profesor LAM</strong></h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">01</div>
+        <div class="tip-title">El Tanque de Presión Primero</div>
+        <div class="tip-text">Antes de culpar a la bomba, verifica el tanque de presión. Un tanque sin aire precargado hace ciclar la bomba cada 5 segundos y destruye el motor.</div>
+        <div class="tip-cat">Residencial</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">02</div>
+        <div class="tip-title">La Regla de los 25 Pies</div>
+        <div class="tip-text">Nunca instales una bomba centrífuga con más de 25 pies de altura de succión. Por encima de eso, el agua simplemente no sube — no importa la potencia.</div>
+        <div class="tip-cat">Instalación</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">03</div>
+        <div class="tip-title">Alineación Antes que Todo</div>
+        <div class="tip-text">El 40% de las fallas en bombas industriales viene de desalineación. 30 minutos de alineación correcta pueden añadir 5 años de vida útil al equipo.</div>
+        <div class="tip-cat">Mantenimiento</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">04</div>
+        <div class="tip-title">El Amperímetro Habla Primero</div>
+        <div class="tip-text">Mide la corriente del motor en cada visita. Un aumento del 10% sobre nominal es señal temprana de desgaste de rodamientos o sello fallando.</div>
+        <div class="tip-cat">Diagnóstico</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">05</div>
+        <div class="tip-title">Arranca con Válvula Parcial</div>
+        <div class="tip-text">Arranca la bomba centrífuga con la válvula de descarga parcialmente cerrada. Reduce el torque de arranque y protege motor e impulsor en los primeros segundos.</div>
+        <div class="tip-cat">Operación</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">06</div>
+        <div class="tip-title">30 Segundos en Seco = Sello Destruido</div>
+        <div class="tip-text">30 segundos sin agua puede destruir el sello mecánico de una bomba de $2,000. Instala siempre un presostato de baja presión. Es la inversión más barata.</div>
+        <div class="tip-cat">Protección</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">07</div>
+        <div class="tip-title">Lee el Color del Aceite</div>
+        <div class="tip-text">Aceite lechoso = entrada de agua. Aceite negro = calor excesivo. Aceite normal = ámbar o dorado. Revísalo en cada mantenimiento — te dirá todo antes que nada más.</div>
+        <div class="tip-cat">Diagnóstico</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">08</div>
+        <div class="tip-title">La Succión Siempre Igual o Mayor</div>
+        <div class="tip-text">Usar tubería de succión más pequeña que el puerto de la bomba es el error más costoso en instalaciones. Siempre igual o un diámetro mayor. Jamás menor.</div>
+        <div class="tip-cat">Instalación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="inner">
+    <div class="quote-wrap">
+      <div class="quote-mark">"</div>
+      <p class="quote-body">
+        En 30 años he visto sistemas de $500,000 fallar por un sello de $12 instalado al revés. El conocimiento no es un lujo — es la diferencia entre un sistema que <em>dura décadas</em> y uno que llamas a arreglar cada año.
+      </p>
+      <div class="quote-rule"></div>
+      <div class="quote-attr">Profesor LAM · L.A.M. Services LLC · Puerto Rico</div>
+    </div>
+  </div>
+</section>
+
+<!-- ASK -->
+<section class="ask" id="pregunta">
+  <div class="inner">
+    <div class="ask-grid">
+      <div>
+        <div class="section-label">Consulta Técnica</div>
+        <h2 class="section-title">Escríbele al<br><strong>Profesor LAM</strong></h2>
+        <p class="ask-text" style="font-family: 'Inter', sans-serif;font-size:17px;line-height:1.85;color:#d0dcea;margin-bottom:16px;">¿Tienes una duda técnica que no encontraste en las lecciones? El Profesor LAM y el equipo de ingenieros de L.A.M. Services responden preguntas cada semana.</p>
+        <p class="ask-text" style="font-family: 'Inter', sans-serif;font-size:17px;line-height:1.85;color:#d0dcea;margin-bottom:16px;">Las mejores preguntas se convierten en nuevas lecciones para beneficiar a toda la comunidad técnica de Puerto Rico.</p>
+        <div class="prof-sig">
+          <div class="prof-badge"><span>Pr.</span></div>
+          <div>
+            <div class="prof-name">Profesor LAM</div>
+            <div class="prof-quote">"No hay preguntas tontas en ingeniería. Hay instalaciones malas porque nadie preguntó a tiempo."</div>
+          </div>
+        </div>
+      </div>
+      <form class="form-st" onsubmit="return false;">
+        <div class="f-row">
+          <div class="form-grp">
+            <label class="form-lbl">Tu Nombre</label>
+            <input type="text" class="fi" placeholder="Pedro García">
+          </div>
+          <div class="form-grp">
+            <label class="form-lbl">Email</label>
+            <input type="email" class="fi" placeholder="tu@email.com">
+          </div>
+        </div>
+        <div class="form-grp">
+          <label class="form-lbl">Tu Perfil</label>
+          <select class="fi fs" style="color:var(--white)">
+            <option value="" style="background:#111720">¿Cuál describe tu situación?</option>
+            <option style="background:#111720">Dueño de Propiedad</option>
+            <option style="background:#111720">Técnico / Plomero</option>
+            <option style="background:#111720">Ingeniero</option>
+            <option style="background:#111720">Estudiante</option>
+            <option style="background:#111720">Contratista</option>
+          </select>
+        </div>
+        <div class="form-grp">
+          <label class="form-lbl">Tu Pregunta Técnica</label>
+          <textarea class="fi fa" placeholder="Describe tu situación con detalle. ¿Qué tipo de bomba? ¿Qué síntoma? ¿Cuándo ocurre? Mientras más detalle, mejor la respuesta."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar al Profesor LAM →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="inner">
+    <div class="section-label">Preguntas Frecuentes</div>
+    <h2 class="section-title">Lo que Más <strong>Preguntan</strong></h2>
+    <div class="faq-cols">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Con qué frecuencia debo hacer mantenimiento a mi bomba doméstica?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Para bombas residenciales, recomendamos una inspección anual por un técnico certificado. En zonas con agua dura o con mucho uso, cada 6 meses. El mantenimiento básico mensual incluye verificar la presión del tanque, escuchar si hay ruidos anormales y revisar que no haya goteos en las conexiones.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">Mi bomba arranca y para constantemente. ¿Qué pasa?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Ese síntoma — llamado "cicleo" — casi siempre indica que el tanque de presión perdió el aire precargado. La solución es recargar el tanque o reemplazarlo si la membrana está rota. Si se deja sin atención, el motor puede fallar en semanas por exceso de arranques.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Cuánto consume de electricidad una bomba de agua?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Depende del tamaño. Una bomba doméstica de 1 HP consume aproximadamente 0.75 kW/hora. Si opera 4 horas al día, son 3 kWh diarios. Con un variador de frecuencia (VFD) puedes reducir ese consumo hasta un 60%.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Cuál es la diferencia entre una bomba centrífuga y una de desplazamiento positivo?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>La bomba centrífuga usa un impulsor giratorio — ideal para grandes caudales a presiones moderadas. La de desplazamiento positivo mueve volúmenes fijos de fluido por ciclo — ideal para altas presiones, fluidos viscosos o dosificación precisa. El 90% de las aplicaciones domésticas y comerciales usan bombas centrífugas.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Puedo instalar yo mismo una bomba doméstica?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Depende del tipo. Una bomba de presurización residencial sencilla puede ser instalada con conocimientos básicos. Sin embargo, sistemas trifásicos, instalaciones comerciales, sistemas contra incendios (NFPA 20) y pozos profundos requieren técnico certificado obligatoriamente.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Qué es la cavitación y por qué es tan peligrosa?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>La cavitación ocurre cuando la presión en la succión cae por debajo de la presión de vapor del agua, formando burbujas que colapsan violentamente al entrar al área de alta presión. Ese colapso erosiona el metal del impulsor. Una bomba cavitando puede destruirse en semanas. Síntomas: ruido como de grava, vibraciones y pérdida súbita de caudal.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Las marcas importan o cualquier bomba sirve?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Las marcas premium (Grundfos, Xylem, Goulds, Pentair) ofrecen curvas certificadas, materiales de calidad y repuestos disponibles. Una bomba genérica puede ser 40% más barata pero fallar en 2 años versus 15+ de una marca reconocida. En aplicaciones críticas, jamás uses marcas no certificadas.</p></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><div class="faq-q-text">¿Cómo sé si mi sistema necesita una bomba más potente?</div><div class="faq-icon">+</div></div>
+        <div class="faq-a"><p>Síntomas: presión insuficiente en horas pico, caudal que cae al abrir varios grifos, o la bomba operando continuamente sin alcanzar la presión de corte. Pero cuidado: a veces el problema es tubería subdimensionada o válvulas cerradas, no la bomba. Siempre diagnostica antes de comprar.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="nl-inner">
+    <div>
+      <div class="nl-title">Una Lección<br><strong>Cada Semana.</strong></div>
+      <div class="nl-sub">Recibe el tip técnico del Profesor LAM directamente en tu email. Sin spam.</div>
+    </div>
+    <div class="nl-form">
+      <input type="email" class="nl-in" placeholder="tu@email.com">
+      <button class="nl-btn"><span data-i18n="ac.nl.btn">Suscribirse →</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-main">
+    <div>
+      <div class="ft-logo">L.A.M. Services LLC</div>
+      <div class="ft-tag">Pump Experts · Puerto Rico</div>
+      <p class="ft-desc">Expertos en sistemas de bombeo con más de 30 años sirviendo a Puerto Rico. El Profesor LAM es nuestra forma de devolver conocimiento a la comunidad.</p>
+    </div>
+    <div class="ft-col">
+      <div class="ft-h">Academia</div>
+      <ul class="ft-ul">
+        <li><a href="#lecciones">Nivel Básico</a></li>
+        <li><a href="#lecciones">Nivel Intermedio</a></li>
+        <li><a href="#lecciones">Nivel Avanzado</a></li>
+        <li><a href="#lecciones">Tips Rápidos</a></li>
+        <li><a href="#pregunta">Preguntar al Profesor</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-h">L.A.M. Services</div>
+      <ul class="ft-ul">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html"><span data-i18n="nav.productos">Productos</span></a></li>
+        <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+        <li><a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a></li>
+        <li><a href="inversionistas.html">🔒 Inversionistas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-copy"><span data-i18n="footer.copy">© 2026 L.A.M. Services LLC · Academia · Puerto Rico</span></div>
+  </div>
+</footer>
+
+<script>
+  
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+id).classList.add('active');
+    // Re-apply format filter after tab switch
+    const activeFmt = document.querySelector('.fmt-btn.active');
+    if (activeFmt) filterFmt(activeFmt.dataset.fmt || 'all', activeFmt);
+  }
+
+  function filterFmt(fmt, btn) {
+    btn.dataset.fmt = fmt;
+    document.querySelectorAll('.fmt-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.fmt-card').forEach(card => {
+      if (fmt === 'all' || card.dataset.fmt === fmt) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function toggleFaq(item) {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!open) item.classList.add('open');
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(r => observer.observe(r));
+
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 1000);
+</script>
+  <script src="lang.js"></script>
+</body>
+</html>

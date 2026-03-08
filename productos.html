@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos | L.A.M. Services LLC — Sistemas de Bombeo Puerto Rico</title>
+<meta name="description" content="Catálogo de sistemas de bombeo residenciales, comerciales e industriales. Marcas líderes: Grundfos, Xylem, Goulds, Pentair y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root {
+    --black:      #0d1f0d;
+    --deep:       #ffffff;
+    --panel:      #f4f9f1;
+    --panel2:     #eef6ff;
+    --border:     #d0e8c8;
+    --green:      #7fd85a;
+    --green-dark: #2a7a1a;
+    --green-dim:  rgba(127,216,90,0.12);
+    --teal:       #25d3da;
+    --blue:       #40a8e7;
+    --text:       #0d1f0d;
+    --muted:      #6a8a6a;
+    --white:      #ffffff;
+    --accent:     #25d3da;
+    --cream:      #ffffff;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--deep);color:var(--text);font-family: 'Inter', sans-serif;font-weight: 400;overflow-x:hidden;}
+  .cursor{width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10001;}
+  .cursor-ring{width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.3s ease;opacity:0.6;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,8,10,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,0.12);transition:all 0.4s;}
+  nav.scrolled{padding:12px 40px;}
+  .nav-logo{display:flex;flex-direction:column;text-decoration:none;}
+  .nav-logo-main{font-family: 'Syne', sans-serif;font-size:22px;letter-spacing: 2px;color:var(--gold);line-height:1;}
+  .nav-logo-sub{font-size: 12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+  .nav-links a{font-size: 13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:#b0c4d8;transition:color 0.3s;position:relative;white-space:nowrap;}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+  .nav-cta{background:var(--gold);color:var(--black)!important;padding:9px 18px;font-size:9px!important;letter-spacing:2px!important;text-decoration:none;font-family: 'Inter', sans-serif;text-transform:uppercase;transition:background 0.3s!important;display:inline-block;}
+  .nav-cta:hover{background:var(--gold-light)!important;}
+  .nav-cta::after{display:none!important;}
+
+  /* PAGE HERO */
+  .page-hero{padding:140px 48px 60px;background:var(--deep);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,169,110,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,110,0.03) 1px,transparent 1px);background-size:80px 80px;}
+  .page-hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;}
+  .page-label{font-size: 12px;letter-spacing: 2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:16px;}
+  .page-label::before{content:'';width:32px;height:1px;background:var(--gold);}
+  .page-title{font-family: 'Inter', sans-serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:12px;}
+  .page-title strong{font-weight:600;color:var(--gold);}
+  .page-subtitle{font-family: 'Inter', sans-serif;font-size:18px;color:#90aac4;max-width:560px;}
+
+  /* SECTION BASE */
+  section{padding:64px 48px;}
+  .inner{max-width:1200px;margin:0 auto;}
+  .section-label{font-size: 12px;letter-spacing: 2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:16px;}
+  .section-label::before{content:'';width:32px;height:1px;background:var(--gold);}
+  .section-title{font-family: 'Inter', sans-serif;font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:32px;}
+  .section-title strong{font-weight:600;color:var(--gold);}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @media(max-width:640px){.reveal{opacity:1;transform:none;transition:none;}}
+
+  /* ============ BRANDS STRIP ============ */
+  .brands-strip{background:var(--panel);border-bottom:1px solid var(--border);padding:40px 48px;}
+  .brands-strip-inner{max-width:1200px;margin:0 auto;}
+  .brands-strip-label{font-size: 13px;letter-spacing: 2px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;text-align:center;}
+  .brands-logos{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;}
+  .brand-logo-item{padding:16px 36px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:background 0.3s;text-decoration:none;}
+  .brand-logo-item:last-child{border-right:none;}
+  .brand-logo-item:hover{background:rgba(200,169,110,0.05);}
+  .brand-logo-svg{width:80px;height:36px;display:flex;align-items:center;justify-content:center;}
+  .brand-logo-name{font-family: 'Syne', sans-serif;font-size:15px;letter-spacing: 1.5px;color:var(--gold);line-height:1;}
+  .brand-logo-origin{font-size: 12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
+
+  /* ============ FILTER BAR ============ */
+  .filter-bar{background:var(--deep);padding:0 48px;border-bottom:1px solid var(--border);position:sticky;top:57px;z-index:50;}
+  .filter-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;}
+  .filter-btn{background:transparent;border:none;border-bottom:2px solid transparent;padding:18px 24px;font-family: 'Inter', sans-serif;font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+  .filter-btn:hover{color:var(--white);}
+  .filter-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+  /* ============ PRODUCTS GRID ============ */
+  .products-section{background:var(--deep);padding:56px 48px;}
+  .products-inner{max-width:1200px;margin:0 auto;}
+  .category-block{margin-bottom:56px;}
+  .category-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+  .category-title{font-family: 'Syne', sans-serif;font-size:22px;letter-spacing: 1.5px;color:var(--white);}
+  .category-count{font-size: 13px;letter-spacing: 1.5px;color:var(--muted);margin-left:auto;border:1px solid var(--border);padding:4px 10px;}
+
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+
+  .product-card{background:var(--panel);display:flex;flex-direction:column;transition:background 0.3s;position:relative;overflow:hidden;}
+  .product-card:hover{background:#141e2a;}
+  .product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;}
+  .product-card:hover::before{transform:scaleX(1);}
+
+  /* Product image area with brand visual */
+  .product-img{height:180px;display:flex;align-items:center;justify-content:center;background:var(--deep);position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .product-img-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,169,110,0.04) 0%,transparent 60%);}
+  .product-img-logo{display:flex;flex-direction:column;align-items:center;gap:6px;z-index:1;}
+  .product-img-brandname{font-family: 'Syne', sans-serif;font-size:28px;letter-spacing: 2px;color:var(--gold);opacity:0.7;line-height:1;}
+  .product-img-icon{font-size:42px;opacity:0.6;margin-bottom:2px;}
+  .product-img-type{font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--muted);opacity:0.8;}
+  .product-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--black);font-size: 12px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;font-weight:400;}
+
+  .product-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .product-brand{font-size: 13px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .product-name{font-family: 'Inter', sans-serif;font-size:18px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:8px;}
+  .product-desc{font-size: 13px;line-height:1.7;color:#90aac4;margin-bottom:12px;flex:1;}
+  .product-use{display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:8px 10px;background:rgba(200,169,110,0.05);border-left:2px solid var(--gold);}
+  .product-use-label{font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+  .product-use-text{font-size: 12px;color:#b0c4d8;}
+  .product-specs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .spec-tag{font-size: 13px;letter-spacing:1px;border:1px solid var(--border);padding:3px 8px;color:var(--muted);}
+  .product-cta{font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s;margin-top:auto;}
+  .product-cta:hover{gap:12px;}
+
+  /* ============ CALCULATOR ============ */
+  .calc-section{background:var(--deep);padding:64px 48px;border-top:1px solid var(--border);}
+  .calc-inner{max-width:900px;margin:0 auto;}
+  .calc-box{background:var(--panel);border:1px solid var(--border);}
+  .calc-header{padding:24px 32px;border-bottom:1px solid var(--border);background:rgba(200,169,110,0.04);display:flex;align-items:center;gap:16px;}
+  .calc-header-icon{font-size:24px;}
+  .calc-header-title{font-family: 'Syne', sans-serif;font-size:20px;letter-spacing: 1.5px;color:var(--white);}
+  .calc-header-sub{font-size: 12px;letter-spacing:2px;color:var(--gold);margin-top:2px;}
+
+  /* Progress bar */
+  .calc-progress{padding:20px 32px 0;display:flex;gap:0;align-items:center;}
+  .calc-step-dot{display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;flex:1;}
+  .calc-step-dot:not(:last-child)::after{content:'';position:absolute;top:14px;left:50%;width:100%;height:1px;background:var(--border);z-index:0;}
+  .calc-step-dot.done::after,.calc-step-dot.active::after{background:var(--gold);}
+  .step-circle{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size: 12px;color:var(--muted);background:var(--panel);z-index:1;transition:all 0.3s;}
+  .calc-step-dot.active .step-circle{border-color:var(--gold);color:var(--gold);background:rgba(200,169,110,0.1);}
+  .calc-step-dot.done .step-circle{border-color:var(--gold);color:var(--black);background:var(--gold);}
+  .step-label{font-size: 12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+  .calc-step-dot.active .step-label{color:var(--gold);}
+
+  /* Steps content */
+  .calc-steps{padding:28px 32px 24px;}
+  .calc-step{display:none;}
+  .calc-step.active{display:block;}
+  .calc-question{font-family: 'Inter', sans-serif;font-size:22px;font-weight:300;color:var(--white);margin-bottom:6px;}
+  .calc-hint{font-size: 12px;letter-spacing:1px;color:var(--muted);margin-bottom:24px;}
+  .calc-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:24px;}
+  .calc-opt{background:var(--deep);border:1px solid var(--border);padding:16px 20px;cursor:pointer;transition:all 0.2s;text-align:left;display:flex;align-items:center;gap:12px;}
+  .calc-opt:hover{border-color:rgba(200,169,110,0.4);background:#0f1620;}
+  .calc-opt.selected{border-color:var(--gold);background:rgba(200,169,110,0.08);}
+  .calc-opt-icon{font-size:20px;flex-shrink:0;}
+  .calc-opt-label{font-size: 13px;letter-spacing:1px;color:var(--text);font-family: 'Inter', sans-serif;}
+  .calc-opt-sub{font-size: 13px;color:var(--muted);margin-top:2px;}
+  .calc-nav{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:8px;}
+  .calc-btn{background:var(--gold);border:none;padding:12px 28px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing:2px;text-transform:uppercase;color:var(--black);cursor:pointer;transition:background 0.2s;font-weight:400;}
+  .calc-btn:hover{background:var(--gold-light);}
+  .calc-btn.secondary{background:transparent;border:1px solid var(--border);color:var(--muted);}
+  .calc-btn.secondary:hover{border-color:var(--gold);color:var(--gold);background:transparent;}
+  .calc-step-count{font-size: 13px;letter-spacing:2px;color:var(--muted);}
+
+  /* Range input */
+  .calc-range-wrap{margin-bottom:24px;}
+  .calc-range-value{font-family: 'Syne', sans-serif;font-size:48px;color:var(--gold);line-height:1;margin-bottom:8px;}
+  .calc-range-unit{font-size: 12px;letter-spacing:2px;color:var(--muted);margin-left:4px;}
+  input[type=range]{width:100%;-webkit-appearance:none;height:2px;background:var(--border);outline:none;margin:16px 0;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--gold);border-radius:50%;cursor:pointer;}
+  .calc-range-labels{display:flex;justify-content:space-between;font-size: 13px;letter-spacing:1px;color:var(--muted);}
+
+  /* Result */
+  .calc-result{display:none;padding:28px 32px;}
+  .calc-result.active{display:block;}
+  .result-title{font-family: 'Inter', sans-serif;font-size:20px;color:var(--white);margin-bottom:4px;}
+  .result-sub{font-size: 12px;letter-spacing:2px;color:var(--muted);margin-bottom:24px;}
+  .result-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-bottom:24px;}
+  .result-card{background:var(--deep);border:1px solid var(--border);padding:20px;position:relative;}
+  .result-card.primary{border-color:var(--gold);}
+  .result-card.primary::before{content:'Recomendación Principal';position:absolute;top:-1px;left:16px;background:var(--gold);color:var(--black);font-size: 12px;letter-spacing:2px;padding:3px 10px;text-transform:uppercase;}
+  .result-brand{font-size: 13px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;margin-top:8px;}
+  .result-name{font-family: 'Inter', sans-serif;font-size:19px;font-weight:600;color:var(--white);margin-bottom:6px;}
+  .result-why{font-size: 13px;color:#90aac4;line-height:1.65;margin-bottom:12px;}
+  .result-specs-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+  .result-price{font-size: 12px;letter-spacing:2px;color:var(--muted);}
+  .result-price span{color:var(--gold);font-family: 'Syne', sans-serif;font-size:18px;letter-spacing:1px;}
+  .result-cta{display:inline-flex;align-items:center;gap:8px;font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid rgba(200,169,110,0.3);padding:9px 16px;transition:all 0.2s;margin-top:8px;}
+  .result-cta:hover{background:var(--gold-dim);}
+  .result-note{font-size: 12px;color:var(--muted);padding:12px 16px;border:1px solid var(--border);background:var(--panel);line-height:1.7;}
+
+  .calc-restart{background:transparent;border:none;font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;text-decoration:underline;margin-top:16px;}
+  .calc-restart:hover{color:var(--white);}
+
+  /* ============ BRANDS FULL ============ */
+  .brands-full{background:var(--deep);padding:56px 48px;border-top:1px solid var(--border);}
+  .brands-full-inner{max-width:1200px;margin:0 auto;}
+  .brands-full-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:32px;}
+  .brand-full-card{background:var(--panel);padding:28px 20px;text-align:center;border-top:2px solid transparent;transition:all 0.3s;cursor:default;}
+  .brand-full-card:hover{border-top-color:var(--gold);background:#141e2a;}
+  .brand-full-name{font-family: 'Syne', sans-serif;font-size:24px;letter-spacing: 1.5px;color:var(--gold);margin-bottom:4px;}
+  .brand-full-origin{font-size: 12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+  .brand-full-desc{font-size: 12px;line-height:1.65;color:#90aac4;margin-bottom:12px;}
+  .brand-full-tags{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;}
+  .brand-tag{font-size: 12px;letter-spacing:1px;border:1px solid var(--border);padding:2px 8px;color:var(--muted);}
+
+  /* ============ CTA BANNER ============ */
+  .cta-banner{background:var(--gold);padding:40px 48px;}
+  .cta-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+  .cta-title{font-family: 'Syne', sans-serif;font-size:28px;letter-spacing: 1.5px;color:var(--black);}
+  .cta-sub{font-size: 13px;letter-spacing:1px;color:rgba(6,8,10,0.7);margin-top:4px;}
+  .cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-dark{background:var(--deep);color:var(--gold);padding:14px 28px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-dark:hover{background:#1a2030;}
+  .btn-outline-dark{border:1px solid var(--black);color:var(--black);padding:14px 28px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-outline-dark:hover{background:rgba(6,8,10,0.1);}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--deep);border-top:1px solid var(--border);padding:48px 48px 28px;}
+  .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto 32px;}
+  .footer-logo{font-family: 'Syne', sans-serif;font-size:24px;letter-spacing: 2px;color:var(--gold);margin-bottom:4px;}
+  .footer-tagline{font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;color:#7a94ae;margin-bottom:16px;}
+  .footer-desc{font-family: 'Inter', sans-serif;font-size:14px;line-height:1.8;color:#8aaac4;}
+  .footer-col-title{font-size: 13px;letter-spacing: 2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size: 13px;color:#8aaac4;text-decoration:none;transition:color 0.3s;letter-spacing:1px;}
+  .footer-links a:hover{color:var(--white);}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+  .footer-copy{font-size: 13px;letter-spacing:2px;color:var(--muted);}
+  .footer-badge{display:flex;gap:16px;}
+  .footer-badge span{font-size: 12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:5px 12px;}
+
+  
+  
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    nav{padding:16px 24px;}
+    .brands-full-grid{grid-template-columns:repeat(3,1fr);}
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:640px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    section,.products-section,.calc-section,.brands-full,.brands-strip,.cta-banner{padding:40px 20px;}
+    .page-hero{padding:110px 20px 48px;}
+    .products-grid{grid-template-columns:1fr;}
+    .brands-full-grid{grid-template-columns:repeat(2,1fr);}
+    .brands-logos{flex-direction:column;}
+    .brand-logo-item{border-right:none;border-bottom:1px solid var(--border);width:100%;}
+    .calc-options{grid-template-columns:1fr;}
+    .calc-header,.calc-steps,.calc-result,.calc-progress{padding-left:20px;padding-right:20px;}
+    .cta-inner{flex-direction:column;align-items:flex-start;}
+    .footer-main{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column;gap:12px;}
+    .filter-bar{padding:0 20px;}
+    .filter-btn{padding:14px 14px;font-size: 12px;}
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+    background:var(--panel);border:1px solid var(--border);
+    padding:5px 10px;transition:border-color .3s;flex-shrink:0;
+  }
+  .lang-toggle:hover { border-color:rgba(200,169,110,0.4); }
+  .lang-es,.lang-en {
+    font-size: 13px;letter-spacing:2px;font-family: 'Inter', sans-serif;
+    text-transform:uppercase;color:var(--gold);transition:opacity .3s;
+  }
+  .lang-track {
+    width:38px;height:18px;background:var(--deep);border:1px solid var(--border);
+    border-radius:9px;position:relative;
+  }
+  .lang-slider {
+    width:16px;height:14px;background:var(--gold);border-radius:7px;
+    position:absolute;top:1px;left:1px;transition:transform .3s;
+  }
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; z-index:300; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+    background:rgba(6,8,10,0.98); z-index:200;
+    flex-direction:column; align-items:center; justify-content:center; gap:0;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform:uppercase; text-decoration:none; color:#b0c4d8;
+    padding:18px 40px; width:100%; text-align:center;
+    border-bottom:1px solid rgba(200,169,110,0.06);
+    transition:color 0.2s, background 0.2s;
+  }
+  .mobile-menu a:hover { color:var(--gold); background:rgba(200,169,110,0.04); }
+  .mobile-menu .mob-cta {
+    margin-top:20px; background:var(--gold); color:var(--black) !important;
+    font-size: 13px; letter-spacing: 1.5px; padding:16px 48px;
+    border:none; width:auto;
+  }
+  .mobile-menu .mob-lang {
+    margin-top:12px; display:flex; align-items:center; gap:12px;
+    font-size: 12px; letter-spacing: 1.5px; color:var(--gold);
+  }
+
+  
+  @media (max-width:640px) {
+    
+    .chatbot-toggle { bottom: 32px !important; right: 20px !important; }
+  }
+  @media (max-width: 640px) {
+    .hamburger { display:flex; }
+  }
+
+  
+  /* Better body readability */
+  body { line-height: 1.6; letter-spacing: -0.01em; }
+
+  /* Nav — lighter, cleaner */
+  nav {
+    background: rgba(13,21,38,0.97) !important;
+    border-bottom: 1px solid rgba(200,169,110,0.15) !important;
+  }
+  .nav-logo-main { font-family: 'Syne', sans-serif !important; font-size: 20px !important; letter-spacing: 3px !important; }
+  .nav-logo-sub  { font-size: 10px !important; letter-spacing: 2px !important; color: var(--muted) !important; }
+  .nav-links a   { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; font-weight: 500 !important; }
+
+  /* Section labels — less monospace aggressive */
+  .section-label {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: var(--gold) !important;
+  }
+
+  /* Section titles — bold, clear */
+  .section-title, h1, h2, h3 {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .section-title strong { font-weight: 800 !important; }
+
+  /* Body text — comfortable to read */
+  p, .lesson-desc, .phil-text, .path-desc, .tip-text, .faq-a p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+    color: #b8cce0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Cards — softer navy with subtle border */
+  .lesson-card, .phil-card, .path-card, .tip-card, .service-card {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px !important;
+  }
+  .lesson-card:hover, .phil-card:hover, .path-card:hover, .tip-card:hover {
+    background: #162040 !important;
+    border-color: rgba(200,169,110,0.3) !important;
+  }
+
+  /* Lesson title text readable */
+  .lesson-title, .phil-title, .path-title, .tip-title {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    color: var(--white) !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Meta labels on cards */
+  .lesson-meta, .path-level, .section-label::before {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+  }
+
+  /* Buttons — modern, clean */
+  .btn-primary, .nav-cta, .btn-submit, .btn-gold {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    font-size: 14px !important;
+    border-radius: 3px !important;
+  }
+  .tab-btn, .fmt-btn {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* FAQ readable */
+  .faq-q-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Form inputs */
+  .fi, .fa, .fs, input, textarea, select {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    border-radius: 3px !important;
+  }
+
+  /* Ticker text */
+  .ticker-track { font-family: 'Inter', sans-serif !important; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 2px !important; }
+
+  /* Hero badge */
+  .hero-badge, .hero-eyebrow {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Content tags on lesson cards */
+  .ctag {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 2px !important;
+  }
+
+  /* Hide custom cursor elements */
+  .cursor, .cursor-ring { display: none !important; }
+
+  /* Footer */
+  footer { background: #060d1a !important; }
+  .ft-desc { font-family: 'Inter', sans-serif !important; font-size: 14px !important; line-height: 1.7 !important; }
+  .ft-ul a { font-family: 'Inter', sans-serif !important; font-size: 13px !important; }
+  .ft-copy { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; }
+
+  /* Mobile menu */
+  .mobile-menu a { font-family: 'Inter', sans-serif !important; letter-spacing: 1px !important; font-size: 15px !important; }
+  .hamburger span { background: var(--white) !important; }
+
+  /* Newsletter */
+  .nl-title { font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .nl-sub, .nl-in { font-family: 'Inter', sans-serif !important; font-size: 14px !important; }
+  .nl-btn { font-family: 'Inter', sans-serif !important; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.5px !important; }
+
+  /* Quote section */
+  .quote-body { font-family: 'Syne', sans-serif !important; font-size: clamp(20px, 2.5vw, 32px) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+
+
+  
+  /* ══════════════════════════════════════
+     LAM BRAND EXACT COLORS v6
+  ══════════════════════════════════════ */
+
+  /* ── Base ── */
+  html, body { background: #ffffff !important; color: #0d1f0d !important; }
+
+  /* ── Nav ── */
+  nav {
+    background: rgba(255,255,255,0.98) !important;
+    border-bottom: 2px solid #7fd85a !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+  }
+  .nav-logo-main { color: #0d1f0d !important; font-weight: 800 !important; }
+  .nav-logo-sub  { color: #6a8a6a !important; }
+  .nav-links a   { color: #3d5a3d !important; font-weight: 500 !important; }
+  .nav-links a:hover, .nav-links a.active { color: #1a6a0a !important; }
+  .nav-cta {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: #6acc44 !important; }
+
+  /* ── Section label ── */
+  .section-label { color: #1a6a0a !important; }
+
+  /* ── Section titles & body ── */
+  .section-title, h1, h2, h3 { color: #0d1f0d !important; }
+  .section-sub, .section-desc { color: #3d5a3d !important; }
+  p { color: #3d5a3d !important; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(150deg, #ffffff 0%, #f0fae8 60%, #e8f8f9 100%) !important;
+    min-height: 100vh !important; position: relative !important;
+  }
+  .hero-bg {
+    background: radial-gradient(ellipse at 70% 40%, rgba(37,211,218,0.1), transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(127,216,90,0.08), transparent 50%) !important;
+    position: absolute !important; inset: 0 !important;
+  }
+  .hero-grid {
+    position: absolute !important; inset: 0 !important;
+    background-image:
+      linear-gradient(rgba(127,216,90,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64,168,231,0.05) 1px, transparent 1px) !important;
+    background-size: 60px 60px !important;
+  }
+  .hero-content { position: relative !important; z-index: 2 !important; }
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; }
+  .hero-badge {
+    border-color: rgba(127,216,90,0.5) !important;
+    color: #1a6a0a !important;
+    background: rgba(127,216,90,0.1) !important;
+  }
+  .stat-num { color: #1a6a0a !important; }
+  .stat-label { color: #6a8a6a !important; }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .btn-primary:hover, .btn-gold:hover { background: #6acc44 !important; }
+  .btn-outline {
+    border-color: #7fd85a !important; color: #1a6a0a !important;
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.1) !important; }
+
+  /* ── Sections — fill empty white areas ── */
+  .about      { background: #f4faf0 !important; }
+  .services   { background: #eef6ff !important; }
+  .process    { background: #f4faf0 !important; }
+  .gallery    { background: #eef6ff !important; }
+  .contact    { background: #f4faf0 !important; }
+  .lessons    { background: #eef6ff !important; }
+  .tips       { background: #f4faf0 !important; }
+  .ask        { background: #eef6ff !important; }
+  .faq        { background: #f4faf0 !important; }
+  .paths      { background: #eef6ff !important; }
+  .newsletter-section { background: #f4faf0 !important; }
+  .quote-section {
+    background: linear-gradient(135deg, #f0fae8, #e8f8f9) !important;
+    border-top: 1px solid rgba(127,216,90,0.2) !important;
+    border-bottom: 1px solid rgba(127,216,90,0.2) !important;
+  }
+  .quote-body { color: #0d1f0d !important; }
+  .quote-name { color: #1a6a0a !important; }
+
+  /* ── Cards — white on tinted bg ── */
+  .lesson-card, .service-card, .tip-card, .path-card, .phil-card, .faq-item {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04) !important;
+    border-radius: 8px !important;
+  }
+  .lesson-card:hover, .service-card:hover, .tip-card:hover, .path-card:hover {
+    border-color: #7fd85a !important;
+    box-shadow: 0 6px 24px rgba(127,216,90,0.18) !important;
+    transform: translateY(-2px) !important;
+  }
+  .lesson-title, .service-title, .tip-title, .path-title, .phil-title {
+    color: #0d1f0d !important;
+  }
+  .lesson-desc, .service-desc, .tip-text, .phil-text {
+    color: #4a6a4a !important;
+  }
+  .lesson-meta { color: #6a8a6a !important; }
+
+  /* ── Tags ── */
+  .ctag {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(26,122,10,0.2) !important;
+    color: #1a6a0a !important;
+  }
+  .ctag.blue {
+    background: rgba(64,168,231,0.1) !important;
+    border-color: rgba(64,168,231,0.3) !important;
+    color: #1a5a8a !important;
+  }
+  .ctag.teal {
+    background: rgba(37,211,218,0.1) !important;
+    border-color: rgba(37,211,218,0.3) !important;
+    color: #0a6a7a !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-wrap { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .ticker-track { color: #0d1f0d !important; font-weight: 600 !important; }
+
+  /* ── Process ── */
+  .process-num {
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+  }
+  .process-title { color: #0d1f0d !important; }
+  .process-desc  { color: #3d5a3d !important; }
+  .process-bar   { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .process-connector { background: rgba(127,216,90,0.3) !important; }
+
+  /* ── Service icons ── */
+  .service-icon-wrap {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(127,216,90,0.3) !important;
+  }
+
+  /* ── Forms ── */
+  .form-lbl { color: #0d1f0d !important; font-weight: 600 !important; }
+  input, textarea, select {
+    background: #ffffff !important;
+    border: 1px solid #c8dcc0 !important;
+    color: #0d1f0d !important;
+    border-radius: 4px !important;
+  }
+  input:focus, textarea:focus {
+    border-color: #7fd85a !important;
+    box-shadow: 0 0 0 3px rgba(127,216,90,0.15) !important;
+    outline: none !important;
+  }
+  input::placeholder, textarea::placeholder { color: #9ab09a !important; }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    color: #3d5a3d !important; background: transparent !important;
+    border-color: #c8dcc0 !important;
+  }
+  .tab-btn.active, .fmt-btn.active {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important;
+  }
+  .tab-btn:hover { color: #1a6a0a !important; border-color: #7fd85a !important; }
+
+  /* ── Newsletter ── */
+  .newsletter { background: linear-gradient(135deg, #7fd85a, #25d3da) !important; }
+  .nl-title, .nl-sub { color: #0d1f0d !important; }
+  .nl-btn { background: #0d1f0d !important; color: #7fd85a !important; border: none !important; }
+  .nl-in { border-color: rgba(0,0,0,0.15) !important; }
+
+  /* ── Lang toggle ── */
+  .lt-track { border-color: rgba(127,216,90,0.5) !important; }
+  .lt-knob { background: #7fd85a !important; }
+  .lt-label { color: #0d1f0d !important; }
+
+  /* ── Chatbot ── */
+  .chatbot-btn-main {
+    background: linear-gradient(135deg, #7fd85a, #25d3da) !important;
+    color: #0d1f0d !important;
+  }
+  .chatbot-float {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  }
+  .chatbot-float-title { color: #0d1f0d !important; }
+
+  /* ── Mobile menu ── */
+  .hamburger span { background: #0d1f0d !important; }
+  .mobile-menu {
+    background: rgba(255,255,255,0.99) !important;
+    border-top: 2px solid #7fd85a !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+  }
+  .mobile-menu a {
+    color: #0d1f0d !important;
+    border-bottom-color: rgba(127,216,90,0.12) !important;
+    font-weight: 500 !important;
+  }
+  .mobile-menu a:hover { color: #1a6a0a !important; }
+  .mobile-nav-cta { background: #7fd85a !important; color: #0d1f0d !important; }
+
+  /* ── Footer ── */
+  footer {
+    background: #0d1f0d !important;
+    border-top: 3px solid #7fd85a !important;
+  }
+  .ft-logo { color: #7fd85a !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+  .ft-h { color: #aacaaa !important; letter-spacing: 1.5px !important; }
+  .ft-ul a:hover { color: #7fd85a !important; }
+  .ft-divider { background: rgba(127,216,90,0.15) !important; }
+
+  /* ── FAQ ── */
+  .faq-q-text { color: #0d1f0d !important; font-weight: 500 !important; }
+  .faq-a p { color: #3d5a3d !important; }
+  .faq-icon { color: #7fd85a !important; }
+
+  /* ── Remove leftover dark backgrounds ── */
+  [style*="background: #060"] { background: #f4faf0 !important; }
+  [style*="background:#060"]  { background: #f4faf0 !important; }
+  [style*="background: #0d1"] { background: #f4faf0 !important; }
+  [style*="background:#0d1"]  { background: #f4faf0 !important; }
+  [style*="background: #111"] { background: #f4faf0 !important; }
+  [style*="background:#111"]  { background: #f4faf0 !important; }
+
+
+  /* ── VISIBILITY FIXES v6.1 ── */
+
+  /* Hero title — dark on light bg */
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; line-height: 1.7 !important; }
+  .hero-badge { color: #1a6a0a !important; border-color: rgba(127,216,90,0.4) !important; background: rgba(127,216,90,0.1) !important; }
+  .stat-num { color: #1a7a0a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .stat-label { color: #5a7a5a !important; font-size: 11px !important; letter-spacing: 1px !important; }
+  .stat-divider { background: rgba(127,216,90,0.3) !important; }
+  .stat-item { opacity: 1 !important; visibility: visible !important; }
+
+  /* All text that was white → dark */
+  .section-title, .section-title strong { color: #0d1f0d !important; }
+  .section-sub { color: #3d5a3d !important; }
+  .about-text p, .service-desc, .process-desc, .contact p { color: #4a6a4a !important; }
+
+  /* Service cards full visibility */
+  .service-card { opacity: 1 !important; visibility: visible !important; }
+  .service-title { color: #0d1f0d !important; font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .service-icon { opacity: 1 !important; }
+
+  /* Process steps */
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-title { color: #0d1f0d !important; }
+  .process-num { color: #1a7a0a !important; border-color: rgba(127,216,90,0.35) !important; }
+
+  /* Contact */
+  .ask-right .section-title { color: #0d1f0d !important; }
+  .contact-intro { color: #4a6a4a !important; }
+
+  /* Btn outline on light bg */
+  .btn-outline { 
+    border: 2px solid #1a7a0a !important; 
+    color: #1a7a0a !important; 
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.12) !important; }
+
+  /* Hero actions buttons visible */
+  .hero-actions { opacity: 1 !important; visibility: visible !important; }
+  .btn-primary { 
+    background: #7fd85a !important; color: #0d1f0d !important; 
+    font-weight: 700 !important; opacity: 1 !important;
+  }
+
+  /* Fix any elements with var(--white) text */
+  .hero-content * { visibility: visible !important; }
+  .hero-stats { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Nav text dark */
+  .nav-links a { color: #2a3a2a !important; }
+  .nav-logo-main { color: #0d1f0d !important; }
+  .nav-logo-sub { color: #5a7a5a !important; }
+
+  /* Section backgrounds solid — no transparent fallback */
+  .services   { background: #eef6ff !important; }
+  .about      { background: #f4faf0 !important; }
+  .process    { background: #f4faf0 !important; }
+  .contact    { background: #eef6ff !important; }
+  footer      { background: #0d1f0d !important; }
+
+  /* Footer text */  
+  .ft-logo { color: #7fd85a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .ft-h { color: #aacaaa !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+
+
+  /* ── FORCE ALL CONTENT VISIBLE (fix reveal + white-on-white) ── */
+
+  /* Disable scroll-based reveal — show everything */
+  .reveal { 
+    opacity: 1 !important; 
+    transform: none !important; 
+    visibility: visible !important;
+  }
+  .reveal.visible { opacity: 1 !important; transform: none !important; }
+
+  /* Process step titles white-on-light fix */
+  .process-title, .process-step h3, .step-title {
+    color: #0d1f0d !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-num { 
+    color: #1a7a0a !important; 
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.1) !important;
+    opacity: 1 !important;
+  }
+  .process-desc { color: #4a6a4a !important; opacity: 1 !important; }
+
+  /* Service cards */
+  .service-card, .service-title, .service-desc, .service-icon {
+    opacity: 1 !important; visibility: visible !important;
+  }
+  .service-title { color: #0d1f0d !important; }
+  .service-desc  { color: #4a6a4a !important; }
+
+  /* About section */
+  .about-text, .about-visual { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Section labels and titles */
+  .section-label { opacity: 1 !important; visibility: visible !important; color: #1a6a0a !important; }
+  .section-title { opacity: 1 !important; visibility: visible !important; color: #0d1f0d !important; }
+  
+  /* Contact section */
+  .contact-form, .ask-right, .ask-left { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Fix any element with opacity: 0 that should be visible */
+  .hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-stats,
+  .stat-item, .stat-num, .stat-label {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+  /* Gallery items */
+  .gallery-item { opacity: 1 !important; }
+
+  /* Ticker */
+  .ticker-wrap { opacity: 1 !important; }
+
+  /* All cards generally */
+  [class*="card"], [class*="step"], [class*="item"] {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+
+  /* ══════════════════════════════════════════
+     TYPOGRAPHY & DESIGN REFINEMENT v7
+     Plus Jakarta Sans + Fraunces
+  ══════════════════════════════════════════ */
+
+  /* ── Base typography ── */
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    letter-spacing: -0.01em !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  /* ── Display titles — Fraunces (editorial, elegant, has character) ── */
+  .hero-title,
+  .section-title,
+  h1, h2 {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* ── Hero title — big, confident, not blocky ── */
+  .hero-title {
+    font-size: clamp(42px, 6.5vw, 96px) !important;
+    font-weight: 600 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em !important;
+    color: #0d1f0d !important;
+  }
+  .hero-title em {
+    font-style: italic !important;
+    color: #1a8a0a !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: clamp(28px, 4vw, 52px) !important;
+    font-weight: 600 !important;
+    color: #0d1f0d !important;
+    margin-bottom: 16px !important;
+  }
+  .section-title strong {
+    font-weight: 700 !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── h3 — Jakarta Sans Bold (card titles, step titles) ── */
+  h3, .service-title, .process-title, .step-title,
+  .lesson-title, .path-title, .phil-title, .tip-title,
+  .faq-q-text, .nl-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.25 !important;
+    color: #0d1f0d !important;
+  }
+  .service-title { font-size: 18px !important; }
+  .process-title { font-size: 20px !important; color: #0d1f0d !important; }
+
+  /* ── Section labels — small caps, refined ── */
+  .section-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+    margin-bottom: 14px !important;
+    display: block !important;
+  }
+
+  /* ── Body text ── */
+  p, .service-desc, .process-desc, .lesson-desc,
+  .path-desc, .tip-text, .phil-text, .ft-desc,
+  .hero-subtitle, .section-sub, .contact-intro {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+    letter-spacing: -0.005em !important;
+  }
+  .hero-subtitle {
+    font-size: clamp(15px, 1.6vw, 18px) !important;
+    color: #4a6a4a !important;
+    max-width: 500px !important;
+  }
+  p { font-size: 15px !important; color: #4a6a4a !important; }
+
+  /* ── Nav ── */
+  .nav-logo-main {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.03em !important;
+    color: #0d1f0d !important;
+  }
+  .nav-logo-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    color: #7a9a7a !important;
+    text-transform: uppercase !important;
+  }
+  .nav-links a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    color: #2a4a2a !important;
+  }
+  .nav-cta {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+    padding: 10px 22px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit, .btn-outline {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.2px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Stats ── */
+  .stat-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(36px, 5vw, 60px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.04em !important;
+    color: #1a7a0a !important;
+  }
+  .stat-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #6a8a6a !important;
+    margin-top: 4px !important;
+  }
+
+  /* ── Process numbers ── */
+  .process-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: 28px !important;
+    color: #1a7a0a !important;
+    border: 1.5px solid rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    width: 56px !important; height: 56px !important;
+    border-radius: 50% !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+  }
+
+  /* ── Tags ── */
+  .ctag {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 3px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-track {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Hero badge ── */
+  .hero-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    padding: 8px 16px !important;
+    border-radius: 3px !important;
+    display: inline-block !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* ── Form labels ── */
+  .form-lbl, label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  input, textarea, select {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── Footer ── */
+  .ft-logo {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    letter-spacing: -0.02em !important;
+    color: #7fd85a !important;
+  }
+  .ft-h {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #aacaaa !important;
+  }
+  .ft-ul a, .ft-desc, .ft-copy {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #7aaa7a !important;
+  }
+
+  /* ── Mobile menu ── */
+  .mobile-menu a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.3px !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* ── Newsletter ── */
+  .nl-title {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: clamp(22px, 3vw, 32px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+  }
+  .nl-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    color: #2a4a2a !important;
+  }
+  .nl-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Quote ── */
+  .quote-body {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: clamp(20px, 2.5vw, 30px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+    line-height: 1.4 !important;
+  }
+  .quote-name {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── Chatbot ── */
+  .chatbot-float-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+  }
+  .chatbot-float-input, .chatbot-msg {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Contact info ── */
+  .contact-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  .contact-value {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #4a6a4a !important;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">L.A.M. Services</span>
+    <span class="nav-logo-sub">Pump Experts · Puerto Rico</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a></li>
+    <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+    <li><a href="index.html#gallery"><span data-i18n="nav.proyectos">Proyectos</span></a></li>
+    <li><a href="productos.html" class="active"><span data-i18n="nav.productos">Productos</span></a></li>
+    <li><a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a></li>
+    <li><a href="inversionistas.html"><span data-i18n="nav.inversionistas">Inversionistas</span></a></li>
+    <li><a href="https://wa.link/dni2dj" class="nav-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="lang-toggle" onclick="toggleLang()" title="ES / EN">
+    <span class="lang-es">ES</span>
+    <div class="lang-track"><div class="lang-slider"></div></div>
+    <span class="lang-en">EN</span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a>
+  <a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a>
+  <a href="productos.html"><span data-i18n="nav.productos">Productos</span></a>
+  <a href="profesor-lam.html"><span data-i18n="nav.academia">🎓 Academia</span></a>
+  <a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a>
+  <a href="inversionistas.html"><span data-i18n="nav.inversionistas">Inversionistas</span></a>
+  <a href="https://wa.link/dni2dj" class="mob-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a>
+  <div class="mob-lang">
+    <button onclick="toggleLang();closeMobileMenu()" style="background:none;border:none;cursor:pointer;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;color:var(--gold);">ES / EN</button>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-label"><span data-i18n="prod.label">Catálogo de Productos</span></div>
+    <h1 class="page-title">Equipos de <strong>Alta Ingeniería</strong><br>para Cada Aplicación</h1>
+    <p class="page-subtitle">Distribuidores autorizados de las marcas líderes mundiales. Cada sistema seleccionado e instalado por nuestros ingenieros certificados.</p>
+  </div>
+</div>
+
+<!-- BRANDS STRIP -->
+<div class="brands-strip">
+  <div class="brands-strip-inner">
+    <div class="brands-strip-label">Marcas Que Distribuimos y Serviciamos</div>
+    <div class="brands-logos">
+      <a href="#grundfos" class="brand-logo-item">
+        <div class="brand-logo-svg">
+          <svg viewBox="0 0 120 40" width="100" height="34">
+            <text x="4" y="30" font-family="'Bebas Neue', sans-serif" font-size="30" fill="#c8a96e" letter-spacing="2">GRUNDFOS</text>
+          </svg>
+        </div>
+        <div class="brand-logo-origin">Dinamarca · 1945</div>
+      </a>
+      <a href="#xylem" class="brand-logo-item">
+        <div class="brand-logo-svg">
+          <svg viewBox="0 0 80 40" width="70" height="34">
+            <text x="4" y="30" font-family="'Bebas Neue', sans-serif" font-size="32" fill="#c8a96e" letter-spacing="2">XYLEM</text>
+          </svg>
+        </div>
+        <div class="brand-logo-origin">USA · Water Tech</div>
+      </a>
+      <a href="#goulds" class="brand-logo-item">
+        <div class="brand-logo-svg">
+          <svg viewBox="0 0 90 40" width="80" height="34">
+            <text x="2" y="30" font-family="'Bebas Neue', sans-serif" font-size="30" fill="#c8a96e" letter-spacing="2">GOULDS</text>
+          </svg>
+        </div>
+        <div class="brand-logo-origin">USA · Industrial</div>
+      </a>
+      <a href="#pentair" class="brand-logo-item">
+        <div class="brand-logo-svg">
+          <svg viewBox="0 0 100 40" width="88" height="34">
+            <text x="2" y="30" font-family="'Bebas Neue', sans-serif" font-size="30" fill="#c8a96e" letter-spacing="2">PENTAIR</text>
+          </svg>
+        </div>
+        <div class="brand-logo-origin">USA · Residential</div>
+      </a>
+      <a href="#flowserve" class="brand-logo-item">
+        <div class="brand-logo-svg">
+          <svg viewBox="0 0 120 40" width="108" height="34">
+            <text x="2" y="30" font-family="'Bebas Neue', sans-serif" font-size="28" fill="#c8a96e" letter-spacing="2">FLOWSERVE</text>
+          </svg>
+        </div>
+        <div class="brand-logo-origin">Global · Heavy Industry</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCat('all',this)">Todos</button>
+    <button class="filter-btn" onclick="filterCat('residencial',this)">Residencial</button>
+    <button class="filter-btn" onclick="filterCat('comercial',this)">Comercial</button>
+    <button class="filter-btn" onclick="filterCat('industrial',this)">Industrial</button>
+    <button class="filter-btn" onclick="filterCat('accesorios',this)">Accesorios</button>
+    <button class="filter-btn" onclick="document.getElementById('calculadora').scrollIntoView({behavior:'smooth'})" style="margin-left:auto;color:var(--gold);">🧮 Calculadora</button>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <div class="products-inner">
+
+    <!-- RESIDENCIAL -->
+    <div class="category-block reveal" id="residencial" data-cat="residencial">
+      <div class="category-header">
+        <div class="category-title">🏠 Sistemas Residenciales</div>
+        <div class="category-count">6 equipos</div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">💧</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Pressurizador Doméstico</div>
+            </div>
+            <span class="product-badge">Popular</span>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">MQ 3-45 Pressurizador Doméstico</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Viviendas con baja presión de AAA</span></div>
+            <div class="product-desc">Sistema compacto todo-en-uno. Mantiene presión constante automáticamente con protección integrada contra marcha en seco. El más vendido en Puerto Rico.</div>
+            <div class="product-specs">
+              <span class="spec-tag">0.9 kW</span><span class="spec-tag">45 m altura</span><span class="spec-tag">3 m³/h</span><span class="spec-tag">Auto-cebante</span>
+            </div>
+            <a href="index.html#contact" class="product-cta"><span data-i18n="prod.cta.text">Solicitar Cotización →</span></a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">⚡</div>
+              <div class="product-img-brandname">PENTAIR</div>
+              <div class="product-img-type">Velocidad Variable</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Pentair</div>
+            <div class="product-name">Intelliflo VSF Bomba Variable</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Reducir factura eléctrica hasta 90%</span></div>
+            <div class="product-desc">Tecnología de velocidad variable para máxima eficiencia energética. Compatible con piscinas y sistemas domésticos de alta demanda.</div>
+            <div class="product-specs">
+              <span class="spec-tag">1.5 HP</span><span class="spec-tag">Velocidad Variable</span><span class="spec-tag">Energy Star</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🔧</div>
+              <div class="product-img-brandname">GOULDS</div>
+              <div class="product-img-type">Bomba Periférica</div>
+            </div>
+            <span class="product-badge">Nuevo</span>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Goulds</div>
+            <div class="product-name">GT20 Bomba Periférica Doméstica</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Cisterna o tanque de almacenamiento</span></div>
+            <div class="product-desc">Diseño robusto de acero inoxidable. Silenciosa, duradera y de bajo mantenimiento para el hogar puertorriqueño.</div>
+            <div class="product-specs">
+              <span class="spec-tag">0.5 HP</span><span class="spec-tag">Acero Inox</span><span class="spec-tag">60 Hz</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🏊</div>
+              <div class="product-img-brandname">PENTAIR</div>
+              <div class="product-img-type">Bomba Piscina</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Pentair</div>
+            <div class="product-name">SuperFlo Bomba para Piscina</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Piscinas residenciales 10,000–30,000 gal</span></div>
+            <div class="product-desc">Alto rendimiento con diseño eficiente para circulación y filtración. Agua cristalina con menor consumo eléctrico.</div>
+            <div class="product-specs">
+              <span class="spec-tag">1 HP</span><span class="spec-tag">230V</span><span class="spec-tag">Piscina</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">⬆️</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Multietapa</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">CM5 Centrífuga Multietapa</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Edificios residenciales 2–4 pisos</span></div>
+            <div class="product-desc">Cuerpo en acero inoxidable, silenciosa y de bajo consumo. Presuriza pisos altos con eficiencia constante.</div>
+            <div class="product-specs">
+              <span class="spec-tag">0.75 kW</span><span class="spec-tag">Multietapa</span><span class="spec-tag">Silenciosa</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🌊</div>
+              <div class="product-img-brandname">XYLEM</div>
+              <div class="product-img-type">Sumergible Pozo</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Xylem / Goulds</div>
+            <div class="product-name">GT Series Bomba Sumergible Pozo</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Pozos de agua subterránea 4"</span></div>
+            <div class="product-desc">Motor hermético resistente a la corrosión. Alta eficiencia para extracción de agua de pozos residenciales profundos.</div>
+            <div class="product-specs">
+              <span class="spec-tag">0.5–1.5 HP</span><span class="spec-tag">Sumergible</span><span class="spec-tag">Pozo 4"</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COMERCIAL -->
+    <div class="category-block reveal" id="comercial" data-cat="comercial">
+      <div class="category-header">
+        <div class="category-title">🏢 Sistemas Comerciales</div>
+        <div class="category-count">4 equipos</div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🏗️</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Sistema Booster</div>
+            </div>
+            <span class="product-badge">Más Vendido</span>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">Hydro MPC Sistema Booster</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Hoteles, condominios y edificios comerciales</span></div>
+            <div class="product-desc">Sistema modular con múltiples bombas en paralelo. Control PLC inteligente para caudal constante con redundancia total.</div>
+            <div class="product-specs">
+              <span class="spec-tag">2–4 bombas</span><span class="spec-tag">Control PLC</span><span class="spec-tag">Redundancia</span><span class="spec-tag">SCADA</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">❄️</div>
+              <div class="product-img-brandname">XYLEM</div>
+              <div class="product-img-type">HVAC Circulación</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Xylem</div>
+            <div class="product-name">Bell & Gossett 1510 HVAC</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Sistemas de aire acondicionado central</span></div>
+            <div class="product-desc">Bomba de circulación para agua helada y condensación en edificios comerciales. Eficiencia IE3 premium.</div>
+            <div class="product-specs">
+              <span class="spec-tag">HVAC</span><span class="spec-tag">Circulación</span><span class="spec-tag">IE3</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🚒</div>
+              <div class="product-img-brandname">GOULDS</div>
+              <div class="product-img-type">Contra Incendios</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Goulds / Xylem</div>
+            <div class="product-name">Sistema Contra Incendios NFPA</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Edificios con sprinklers requeridos por ley</span></div>
+            <div class="product-desc">Cumple NFPA 20. Incluye bomba principal, bomba jockey y panel de control. UL Listed y FM Approved.</div>
+            <div class="product-specs">
+              <span class="spec-tag">NFPA 20</span><span class="spec-tag">UL Listed</span><span class="spec-tag">FM Approved</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🔥</div>
+              <div class="product-img-brandname">FLOWSERVE</div>
+              <div class="product-img-type">ANSI Process</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Flowserve</div>
+            <div class="product-name">Durco Mark 3 Bomba ANSI</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Procesos industriales y comerciales</span></div>
+            <div class="product-desc">Diseño back pull-out para mantenimiento sin desalinear tuberías. Estándar ANSI B73.1 con múltiples materiales de construcción.</div>
+            <div class="product-specs">
+              <span class="spec-tag">Hasta 75 kW</span><span class="spec-tag">ANSI B73.1</span><span class="spec-tag">Back Pull-Out</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INDUSTRIAL -->
+    <div class="category-block reveal" id="industrial" data-cat="industrial">
+      <div class="category-header">
+        <div class="category-title">🏭 Sistemas Industriales</div>
+        <div class="category-count">4 equipos</div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">⚡</div>
+              <div class="product-img-brandname">FLOWSERVE</div>
+              <div class="product-img-type">Alta Potencia</div>
+            </div>
+            <span class="product-badge">Alta Potencia</span>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Flowserve</div>
+            <div class="product-name">Worthington D-Series Centrífuga</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Industria pesada, minería, petroquímica</span></div>
+            <div class="product-desc">Bomba horizontal de alta capacidad. Hierro fundido o acero inox según aplicación. Norma API 610.</div>
+            <div class="product-specs">
+              <span class="spec-tag">Hasta 500 kW</span><span class="spec-tag">API 610</span><span class="spec-tag">Alta caudal</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🌀</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Proceso Industrial</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">NK/NKE Bomba de Proceso</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Farmacéutica, alimentos, química</span></div>
+            <div class="product-desc">Diseño DIN EN 733. Materiales aptos para contacto alimentario. Presente en plantas farmacéuticas de Puerto Rico.</div>
+            <div class="product-specs">
+              <span class="spec-tag">DIN EN 733</span><span class="spec-tag">Acero Inox</span><span class="spec-tag">Alimentario</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🛢️</div>
+              <div class="product-img-brandname">XYLEM</div>
+              <div class="product-img-type">Sumergible Industrial</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Xylem</div>
+            <div class="product-name">Flygt Sumergible Industrial</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Aguas residuales y plantas municipales</span></div>
+            <div class="product-desc">Máxima durabilidad en condiciones severas. IP68 con diseño anti-obstrucción para sólidos y efluentes.</div>
+            <div class="product-specs">
+              <span class="spec-tag">Aguas Residuales</span><span class="spec-tag">IP68</span><span class="spec-tag">Anti-obstrucción</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">📊</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Dosificadora</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">DME Dosificadora de Precisión</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Tratamiento de agua, química, laboratorios</span></div>
+            <div class="product-desc">Precisión ±1%. Control digital con MODBUS y Profibus. Dosificación exacta para cumplimiento regulatorio.</div>
+            <div class="product-specs">
+              <span class="spec-tag">±1% precisión</span><span class="spec-tag">MODBUS</span><span class="spec-tag">Profibus</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ACCESORIOS -->
+    <div class="category-block reveal" id="accesorios" data-cat="accesorios">
+      <div class="category-header">
+        <div class="category-title">🔩 Accesorios & Controles</div>
+        <div class="category-count">4 equipos</div>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">📦</div>
+              <div class="product-img-brandname">GRUNDFOS</div>
+              <div class="product-img-type">Panel de Control</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Grundfos</div>
+            <div class="product-name">CU 354 Panel de Control</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Monitoreo y protección de bomba</span></div>
+            <div class="product-desc">Display digital, protección contra marcha en seco y alarmas configurables para sistemas residenciales y comerciales.</div>
+            <div class="product-specs">
+              <span class="spec-tag">Digital</span><span class="spec-tag">Alarmas</span><span class="spec-tag">Protección</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🛡️</div>
+              <div class="product-img-brandname">VARIAS</div>
+              <div class="product-img-type">Tanques de Presión</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Varias Marcas</div>
+            <div class="product-name">Tanques de Presión / Expansión</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Reducir ciclos de arranque de la bomba</span></div>
+            <div class="product-desc">Tanques precargados de membrana NSF. Prolongan la vida de la bomba y eliminan el cicleo por pérdida de aire.</div>
+            <div class="product-specs">
+              <span class="spec-tag">20–500 L</span><span class="spec-tag">Membrana</span><span class="spec-tag">NSF Certified</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🔌</div>
+              <div class="product-img-brandname">ABB</div>
+              <div class="product-img-type">Variadores VFD</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">ABB / Grundfos</div>
+            <div class="product-name">Variadores de Frecuencia (VFD)</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Reducir hasta 60% el costo eléctrico</span></div>
+            <div class="product-desc">Control de velocidad variable compatible con cualquier bomba. Arranque suave y optimización de consumo en tiempo real.</div>
+            <div class="product-specs">
+              <span class="spec-tag">0.75–75 kW</span><span class="spec-tag">IP54/IP66</span><span class="spec-tag">Ahorro Energía</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <div class="product-img-bg"></div>
+            <div class="product-img-logo">
+              <div class="product-img-icon">🔍</div>
+              <div class="product-img-brandname">OEM</div>
+              <div class="product-img-type">Repuestos</div>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-brand">Varias Marcas</div>
+            <div class="product-name">Repuestos & Kits de Mantenimiento</div>
+            <div class="product-use"><span class="product-use-label">Ideal para</span><span class="product-use-text">Mantenimiento preventivo y reparaciones</span></div>
+            <div class="product-desc">Sellos mecánicos, impulsores, rodamientos y kits OEM. Inventario local en Puerto Rico para entrega inmediata.</div>
+            <div class="product-specs">
+              <span class="spec-tag">OEM Parts</span><span class="spec-tag">Inventario Local</span><span class="spec-tag">Todas las marcas</span>
+            </div>
+            <a href="index.html#contact" class="product-cta">Solicitar Cotización →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section reveal" id="calculadora">
+  <div class="calc-inner">
+    <div class="section-label">Herramienta</div>
+    <h2 class="section-title">¿Cuál Bomba <strong>Necesita?</strong></h2>
+
+    <div class="calc-box">
+      <div class="calc-header">
+        <div class="calc-header-icon">🧮</div>
+        <div>
+          <div class="calc-header-title">Calculadora de Selección de Bomba</div>
+          <div class="calc-header-sub"><span data-i18n="prod.calc.sub">Responda 4 preguntas — Le recomendamos el equipo ideal</span></div>
+        </div>
+      </div>
+
+      <div class="calc-progress" id="calcProgress">
+        <div class="calc-step-dot active" id="dot1"><div class="step-circle">1</div><div class="step-label">Tipo</div></div>
+        <div class="calc-step-dot" id="dot2"><div class="step-circle">2</div><div class="step-label">Tamaño</div></div>
+        <div class="calc-step-dot" id="dot3"><div class="step-circle">3</div><div class="step-label">Problema</div></div>
+        <div class="calc-step-dot" id="dot4"><div class="step-circle">4</div><div class="step-label">Presupuesto</div></div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="calc-steps">
+        <div class="calc-step active" id="step1">
+          <div class="calc-question">¿Qué tipo de propiedad tiene?</div>
+          <div class="calc-hint">Esto nos ayuda a determinar el rango de presión y caudal necesario.</div>
+          <div class="calc-options">
+            <button class="calc-opt" onclick="selectOpt(this,'type','residencial')">
+              <span class="calc-opt-icon">🏠</span>
+              <div><div class="calc-opt-label">Residencial</div><div class="calc-opt-sub">Casa o apartamento</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'type','edificio')">
+              <span class="calc-opt-icon">🏢</span>
+              <div><div class="calc-opt-label">Edificio / Condo</div><div class="calc-opt-sub">2 pisos o más</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'type','comercial')">
+              <span class="calc-opt-icon">🏪</span>
+              <div><div class="calc-opt-label">Comercial</div><div class="calc-opt-sub">Negocio, hotel, restaurante</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'type','industrial')">
+              <span class="calc-opt-icon">🏭</span>
+              <div><div class="calc-opt-label">Industrial</div><div class="calc-opt-sub">Planta, fábrica, municipal</div></div>
+            </button>
+          </div>
+          <div class="calc-nav">
+            <span class="calc-step-count">Paso 1 de 4</span>
+            <button class="calc-btn" onclick="nextStep(2)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="calc-step" id="step2">
+          <div class="calc-question">¿Cuántos puntos de agua tiene?</div>
+          <div class="calc-hint">Incluya baños, cocina, lavandería, riego — todos los grifos y equipos.</div>
+          <div class="calc-range-wrap">
+            <div><span class="calc-range-value" id="rangeVal">8</span><span class="calc-range-unit">puntos de agua</span></div>
+            <input type="range" min="1" max="50" value="8" id="pointsRange" oninput="document.getElementById('rangeVal').textContent=this.value">
+            <div class="calc-range-labels"><span>1 (estudio)</span><span>10 (casa típica)</span><span>25 (edificio)</span><span>50+</span></div>
+          </div>
+          <div class="calc-nav">
+            <button class="calc-btn secondary" onclick="nextStep(1)">← Atrás</button>
+            <span class="calc-step-count">Paso 2 de 4</span>
+            <button class="calc-btn" onclick="nextStep(3)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="calc-step" id="step3">
+          <div class="calc-question">¿Cuál es su problema o necesidad principal?</div>
+          <div class="calc-hint">Seleccione lo que mejor describe su situación actual.</div>
+          <div class="calc-options">
+            <button class="calc-opt" onclick="selectOpt(this,'problem','presion')">
+              <span class="calc-opt-icon">📉</span>
+              <div><div class="calc-opt-label">Baja Presión</div><div class="calc-opt-sub">Agua débil, especialmente en pisos altos</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'problem','pozo')">
+              <span class="calc-opt-icon">🕳️</span>
+              <div><div class="calc-opt-label">Extracción de Pozo</div><div class="calc-opt-sub">Necesito extraer agua subterránea</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'problem','incendio')">
+              <span class="calc-opt-icon">🚒</span>
+              <div><div class="calc-opt-label">Contra Incendios</div><div class="calc-opt-sub">Sistema NFPA requerido por ley</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'problem','energia')">
+              <span class="calc-opt-icon">💡</span>
+              <div><div class="calc-opt-label">Alto Consumo Eléctrico</div><div class="calc-opt-sub">Mi bomba actual gasta demasiado</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'problem','proceso')">
+              <span class="calc-opt-icon">⚙️</span>
+              <div><div class="calc-opt-label">Proceso / Industria</div><div class="calc-opt-sub">Bombeo de fluidos en proceso productivo</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'problem','nuevo')">
+              <span class="calc-opt-icon">🏗️</span>
+              <div><div class="calc-opt-label">Instalación Nueva</div><div class="calc-opt-sub">Proyecto nuevo, no tengo bomba</div></div>
+            </button>
+          </div>
+          <div class="calc-nav">
+            <button class="calc-btn secondary" onclick="nextStep(2)">← Atrás</button>
+            <span class="calc-step-count">Paso 3 de 4</span>
+            <button class="calc-btn" onclick="nextStep(4)">Continuar →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="calc-step" id="step4">
+          <div class="calc-question">¿Cuál es su presupuesto aproximado?</div>
+          <div class="calc-hint">Incluye el equipo. La instalación se cotiza por separado según complejidad.</div>
+          <div class="calc-options">
+            <button class="calc-opt" onclick="selectOpt(this,'budget','bajo')">
+              <span class="calc-opt-icon">💵</span>
+              <div><div class="calc-opt-label">Hasta $1,500</div><div class="calc-opt-sub">Solución básica eficiente</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'budget','medio')">
+              <span class="calc-opt-icon">💰</span>
+              <div><div class="calc-opt-label">$1,500 – $5,000</div><div class="calc-opt-sub">Equipo premium residencial/comercial</div></div>
+            </button>
+            <button class="calc-opt" onclick="selectOpt(this,'budget','alto')">
+              <span class="calc-opt-icon">🏆</span>
+              <div><div class="calc-opt-label">$5,000+</div><div class="calc-opt-sub">Sistema industrial o múltiples bombas</div></div>
+            </button>
+          </div>
+          <div class="calc-nav">
+            <button class="calc-btn secondary" onclick="nextStep(3)">← Atrás</button>
+            <span class="calc-step-count">Paso 4 de 4</span>
+            <button class="calc-btn" onclick="showResult()">Ver Recomendación →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="calc-result" id="calcResult">
+        <div class="result-title" id="resultTitle">Su Recomendación Personalizada</div>
+        <div class="result-sub">Basado en sus respuestas — L.A.M. Services · Puerto Rico</div>
+        <div class="result-cards" id="resultCards"></div>
+        <div class="result-note" id="resultNote"></div>
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <a href="https://wa.link/dni2dj" target="_blank" class="result-cta">💬 Cotizar por WhatsApp →</a>
+          <a href="index.html#contact" class="result-cta">📋 Formulario de Contacto →</a>
+        </div>
+        <button class="calc-restart" onclick="restartCalc()">↺ Volver a empezar</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS FULL -->
+<div class="brands-full">
+  <div class="brands-full-inner">
+    <div class="section-label"><span data-i18n="brands.label">Nuestros Distribuidores</span></div>
+    <h2 class="section-title">Las Mejores <strong>Marcas del Mundo</strong></h2>
+    <div class="brands-full-grid reveal">
+      <div class="brand-full-card" id="grundfos">
+        <div class="brand-full-name">GRUNDFOS</div>
+        <div class="brand-full-origin">Dinamarca · Fundada 1945</div>
+        <div class="brand-full-desc">Líder mundial en eficiencia energética. Sus bombas están en más de 56 millones de instalaciones globalmente. La marca #1 para sistemas domésticos en Puerto Rico.</div>
+        <div class="brand-full-tags"><span class="brand-tag">Residencial</span><span class="brand-tag">Comercial</span><span class="brand-tag">Industrial</span><span class="brand-tag">Municipal</span></div>
+      </div>
+      <div class="brand-full-card" id="xylem">
+        <div class="brand-full-name">XYLEM</div>
+        <div class="brand-full-origin">USA · Water Technology</div>
+        <div class="brand-full-desc">Empresa global de tecnología hídrica. Incluye las marcas Bell & Gossett, Goulds, Flygt y A-C Fire Pump. Especialistas en HVAC, contra incendios y aguas residuales.</div>
+        <div class="brand-full-tags"><span class="brand-tag">HVAC</span><span class="brand-tag">Incendios</span><span class="brand-tag">Residuales</span><span class="brand-tag">Municipal</span></div>
+      </div>
+      <div class="brand-full-card" id="goulds">
+        <div class="brand-full-name">GOULDS</div>
+        <div class="brand-full-origin">USA · Parte de Xylem</div>
+        <div class="brand-full-desc">Más de 170 años de historia en ingeniería de bombas. Referente en pozos de agua potable y aplicaciones industriales. Curvas de rendimiento certificadas.</div>
+        <div class="brand-full-tags"><span class="brand-tag">Pozos</span><span class="brand-tag">Doméstico</span><span class="brand-tag">Industrial</span></div>
+      </div>
+      <div class="brand-full-card" id="pentair">
+        <div class="brand-full-name">PENTAIR</div>
+        <div class="brand-full-origin">USA · Water Treatment</div>
+        <div class="brand-full-desc">Especialistas en tratamiento y gestión de agua. Líderes en bombas para piscinas residenciales con tecnología de velocidad variable Energy Star.</div>
+        <div class="brand-full-tags"><span class="brand-tag">Piscinas</span><span class="brand-tag">Residencial</span><span class="brand-tag">Filtración</span></div>
+      </div>
+      <div class="brand-full-card" id="flowserve">
+        <div class="brand-full-name">FLOWSERVE</div>
+        <div class="brand-full-origin">Global · Heavy Industry</div>
+        <div class="brand-full-desc">Soluciones de bombeo para los sectores más exigentes: petroquímica, energía, minería y agua municipal. Normas API, ANSI e ISO certificadas.</div>
+        <div class="brand-full-tags"><span class="brand-tag">Petroquímica</span><span class="brand-tag">Energía</span><span class="brand-tag">API 610</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div>
+      <div class="cta-title">¿Tiene un Proyecto en Mente?</div>
+      <div class="cta-sub">Consulta gratuita con nuestros ingenieros certificados. Respuesta en menos de 24 horas.</div>
+    </div>
+    <div class="cta-actions">
+      <a href="index.html#contact" class="btn-dark">Solicitar Propuesta</a>
+      <a href="https://wa.link/dni2dj" target="_blank" class="btn-outline-dark">WhatsApp →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo">L.A.M. Services LLC</div>
+      <div class="footer-tagline">Pump Experts · Puerto Rico</div>
+      <p class="footer-desc">Expertos en sistemas de bombeo con más de 30 años sirviendo a Puerto Rico con ingeniería de precisión y compromiso total.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navegación</div>
+      <ul class="footer-links">
+        <li><a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a></li>
+        <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+        <li><a href="index.html#gallery"><span data-i18n="nav.proyectos">Proyectos</span></a></li>
+        <li><a href="productos.html"><span data-i18n="nav.productos">Productos</span></a></li>
+        <li><a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <ul class="footer-links">
+        <li><a href="tel:+17875551234">(787) 555-1234</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8c4c9c5dbcddadec1cbcddbc4c4cb86cbc7c5"><span class="__cf_email__" data-cfemail="e28b8c848da28e838f918790948b8187918e8e81cc818d8f">[email&#160;protected]</span></a></li>
+        <li><a href="https://wa.link/dni2dj" target="_blank">WhatsApp</a></li>
+        <li><a href="inversionistas.html"><span data-i18n="nav.inversionistas">Inversionistas</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy"><span data-i18n="footer.copy">© 2026 L.A.M. Services LLC · Todos los derechos reservados · Puerto Rico</span></div>
+    <div class="footer-badge"><span>Licenciados</span><span>Certificados</span></div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  if (cursor && ring && window.matchMedia('(pointer: fine)').matches) {
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+    (function tick(){
+      cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';
+      rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+      ring.style.left=rx-16+'px';ring.style.top=ry-16+'px';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('a,button').forEach(el => {
+      el.addEventListener('mouseenter',()=>ring.style.transform='scale(1.8)');
+      el.addEventListener('mouseleave',()=>ring.style.transform='scale(1)');
+    });
+  }
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Filter
+  function filterCat(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.category-block').forEach(block => {
+      block.style.display = (cat === 'all' || block.dataset.cat === cat) ? 'block' : 'none';
+    });
+  }
+
+  // Reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => {
+      if (e.isIntersecting) { setTimeout(()=>e.target.classList.add('visible'),i*60); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+  setTimeout(() => document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible')), 1000);
+
+  // ============ CALCULATOR ============
+  const answers = {};
+
+  function selectOpt(el, key, val) {
+    el.closest('.calc-options').querySelectorAll('.calc-opt').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[key] = val;
+  }
+
+  function nextStep(n) {
+    document.querySelectorAll('.calc-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step'+n).classList.add('active');
+    // Update progress dots
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('dot'+i);
+      dot.classList.remove('active','done');
+      if (i < n) dot.classList.add('done');
+      if (i === n) dot.classList.add('active');
+    }
+    // Update step circle icons for done
+    for (let i = 1; i < n; i++) {
+      document.querySelector('#dot'+i+' .step-circle').textContent = '✓';
+    }
+    document.getElementById('calcProgress').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  function showResult() {
+    const type = answers.type || 'residencial';
+    const points = parseInt(document.getElementById('pointsRange').value);
+    const problem = answers.problem || 'presion';
+    const budget = answers.budget || 'bajo';
+
+    // Recommendation logic
+    let primary = {}, secondary = {};
+
+    if (problem === 'pozo') {
+      primary = { brand:'Xylem / Goulds', name:'GT Series Sumergible', why:'La opción más confiable para extracción de pozos en Puerto Rico. Motor hermético, resistente a corrosión, ideal para pozos de 4" con 30+ años de trayectoria.', specs:['0.5–1.5 HP','Sumergible','Pozo 4"','60 Hz'], price:'$1,200–$2,800' };
+      secondary = { brand:'Grundfos', name:'SQ Flex Sumergible', why:'Alternativa premium con control digital integrado. Ideal si el pozo tiene variaciones de nivel.', specs:['0.3–1.5 kW','Control Digital','Auto-adaptable'], price:'$1,800–$3,500' };
+    } else if (problem === 'incendio') {
+      primary = { brand:'Goulds / Xylem', name:'Sistema NFPA 20 Completo', why:'Único sistema certificado para cumplimiento legal. Incluye bomba principal, jockey, controlador UL y pruebas de aceptación. Obligatorio para su edificio.', specs:['NFPA 20','UL Listed','FM Approved','Bomba Jockey'], price:'$8,000–$25,000' };
+      secondary = { brand:'Flowserve', name:'Fire Pump System ANSI', why:'Para instalaciones industriales con requerimientos API. Mayor robustez y caudal.', specs:['API','ANSI','Alta caudal'], price:'$12,000+' };
+    } else if (problem === 'proceso' || type === 'industrial') {
+      primary = { brand:'Flowserve', name:'Worthington D-Series', why:'Estándar de la industria para procesos de alta demanda. Construcción robusta, norma API 610, materiales seleccionables según fluido.', specs:['Hasta 500 kW','API 610','Alta caudal'], price:'Cotización Personalizada' };
+      secondary = { brand:'Grundfos', name:'NK/NKE Proceso DIN', why:'Ideal si maneja fluidos alimentarios o farmacéuticos. Acero inoxidable aprobado.', specs:['DIN EN 733','Alimentario','Acero Inox'], price:'Cotización' };
+    } else if (problem === 'energia') {
+      primary = { brand:'Pentair', name:'Intelliflo VSF Velocidad Variable', why:'Reduce el consumo eléctrico hasta 90%. Paga su costo en 12–18 meses de ahorro. La mejor inversión a largo plazo.', specs:['Velocidad Variable','Energy Star','1.5 HP'], price:'$1,400–$2,200' };
+      secondary = { brand:'ABB / Grundfos', name:'VFD para Bomba Existente', why:'Si su bomba actual está en buen estado, un variador de frecuencia puede lograr el mismo ahorro sin reemplazar todo el equipo.', specs:['0.75–75 kW','Ahorro 60%','Compatible'], price:'$600–$2,500' };
+    } else if (type === 'edificio' || points > 15) {
+      primary = { brand:'Grundfos', name:'Hydro MPC Sistema Booster', why:'Diseñado específicamente para edificios de múltiples pisos. Control PLC con redundancia total — si una bomba falla, las otras mantienen el servicio.', specs:['2–4 bombas','Control PLC','SCADA Ready'], price:'$4,500–$12,000' };
+      secondary = { brand:'Grundfos', name:'CM5 Multietapa', why:'Para edificios de 2–4 pisos sin requerimiento de redundancia. Más económica y silenciosa.', specs:['0.75 kW','Multietapa','Silenciosa'], price:'$900–$1,600' };
+    } else {
+      primary = { brand:'Grundfos', name:'MQ 3-45 Pressurizador', why:'El equipo más instalado en Puerto Rico para baja presión doméstica. Todo-en-uno, silencioso, se instala en horas. Perfecto para hogares con presión insuficiente de la AAA.', specs:['0.9 kW','45 m altura','Auto-cebante'], price:'$850–$1,300' };
+      secondary = { brand:'Goulds', name:'GT20 Periférica Doméstica', why:'Opción más económica con excelente durabilidad. Acero inoxidable, bajo mantenimiento.', specs:['0.5 HP','Acero Inox','60 Hz'], price:'$450–$750' };
+    }
+
+    const cardsHTML = `
+      <div class="result-card primary">
+        <div class="result-brand">${primary.brand}</div>
+        <div class="result-name">${primary.name}</div>
+        <div class="result-why">${primary.why}</div>
+        <div class="result-specs-row">${primary.specs.map(s=>`<span class="spec-tag">${s}</span>`).join('')}</div>
+        <div class="result-price">Rango estimado: <span>${primary.price}</span></div>
+      </div>
+      <div class="result-card">
+        <div class="result-brand" style="margin-top:0">${secondary.brand}</div>
+        <div class="result-name">${secondary.name}</div>
+        <div class="result-why">${secondary.why}</div>
+        <div class="result-specs-row">${secondary.specs.map(s=>`<span class="spec-tag">${s}</span>`).join('')}</div>
+        <div class="result-price">Rango estimado: <span>${secondary.price}</span></div>
+      </div>`;
+
+    document.getElementById('resultCards').innerHTML = cardsHTML;
+    document.getElementById('resultNote').innerHTML = '⚠️ <strong>Nota importante:</strong> Estos son rangos orientativos. El precio final depende de la complejidad de instalación, distancias de tuberías y condiciones específicas del sitio. Contáctenos para una cotización exacta sin costo.';
+
+    // Hide steps, show result
+    document.getElementById('calcProgress').style.display = 'none';
+    document.querySelector('.calc-steps').style.display = 'none';
+    document.getElementById('calcResult').classList.add('active');
+  }
+
+  function restartCalc() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+    document.getElementById('calcProgress').style.display = 'flex';
+    document.querySelector('.calc-steps').style.display = 'block';
+    document.getElementById('calcResult').classList.remove('active');
+    nextStep(1);
+    document.getElementById('pointsRange').value = 8;
+    document

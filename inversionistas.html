@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inversionistas | L.A.M. Services LLC — Puerto Rico</title>
+<meta name="description" content="Oportunidad de inversión en infraestructura hídrica de Puerto Rico. 30+ años de historial comprobado. Solicite información confidencial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root {
+    --black:      #0d1f0d;
+    --deep:       #ffffff;
+    --panel:      #f4f9f1;
+    --panel2:     #eef6ff;
+    --border:     #d0e8c8;
+    --green:      #7fd85a;
+    --green-dark: #2a7a1a;
+    --green-dim:  rgba(127,216,90,0.12);
+    --teal:       #25d3da;
+    --blue:       #40a8e7;
+    --text:       #0d1f0d;
+    --muted:      #6a8a6a;
+    --white:      #ffffff;
+    --accent:     #25d3da;
+    --cream:      #ffffff;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--deep);color:var(--text);font-family: 'Inter', sans-serif;font-weight: 400;overflow-x:hidden;}
+  .cursor{width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10001;}
+  .cursor-ring{width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all 0.3s ease;opacity:0.6;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,8,10,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,0.12);transition:all 0.4s;}
+  nav.scrolled{padding:12px 40px;}
+  .nav-logo{display:flex;flex-direction:column;text-decoration:none;}
+  .nav-logo-main{font-family: 'Syne', sans-serif;font-size:22px;letter-spacing: 2px;color:var(--gold);line-height:1;}
+  .nav-logo-sub{font-size: 12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:26px;list-style:none;align-items:center;}
+  .nav-links a{font-size: 13px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:#b0c4d8;transition:color 0.3s;position:relative;white-space:nowrap;}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+  .nav-cta{background:var(--gold);color:var(--black)!important;padding:9px 18px;font-size:9px!important;letter-spacing:2px!important;text-decoration:none;font-family: 'Inter', sans-serif;text-transform:uppercase;transition:background 0.3s!important;display:inline-block;}
+  .nav-cta:hover{background:var(--gold-light)!important;}
+  .nav-cta::after{display:none!important;}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  @media(max-width:640px){.reveal{opacity:1;transform:none;transition:none;}}
+
+  /* ============ HERO ============ */
+  .hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 48px 64px;}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,8,10,0.97) 0%,rgba(12,16,24,0.8) 60%,rgba(6,8,10,0.95) 100%);z-index:1;}
+  .hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(200,169,110,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,110,0.025) 1px,transparent 1px);background-size:80px 80px;}
+
+  /* Animated background lines */
+  .hero-lines{position:absolute;inset:0;z-index:0;overflow:hidden;}
+  .h-line{position:absolute;top:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(200,169,110,0.06),transparent);animation:lineFade 6s ease-in-out infinite;}
+  .h-line:nth-child(1){left:20%;animation-delay:0s;}
+  .h-line:nth-child(2){left:45%;animation-delay:1.5s;}
+  .h-line:nth-child(3){left:70%;animation-delay:3s;}
+  .h-line:nth-child(4){left:85%;animation-delay:4.5s;}
+  @keyframes lineFade{0%,100%{opacity:0}50%{opacity:1}}
+
+  .hero-content{position:relative;z-index:2;max-width:1200px;width:100%;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(200,169,110,0.25);padding:7px 18px;font-size: 13px;letter-spacing: 2px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+  .hero-eyebrow::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+  .hero-title{font-family: 'Inter', sans-serif;font-size:clamp(48px,7vw,96px);font-weight:300;color:var(--white);line-height:.95;margin-bottom:24px;}
+  .hero-title strong{font-weight:600;color:var(--gold);}
+  .hero-title em{font-style:normal;color:transparent;}
+
+  .hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .hero-desc{font-family: 'Inter', sans-serif;font-size:18px;color:#90aac4;max-width:480px;line-height:1.7;}
+  .hero-cta-group{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+  .btn-gold{background:var(--gold);color:var(--black);padding:16px 32px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.3s;font-weight:400;}
+  .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(200,169,110,0.3);color:var(--gold);padding:16px 32px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.3s;}
+  .btn-ghost:hover{background:var(--gold-dim);}
+  .hero-confidential{font-size: 13px;letter-spacing:2px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+  .hero-confidential::before{content:'🔒';}
+
+  /* ============ NUMBERS STRIP ============ */
+  .numbers-strip{background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .numbers-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+  .num-item{padding:36px 32px;border-right:1px solid var(--border);text-align:center;}
+  .num-item:last-child{border-right:none;}
+  .num-value{font-family: 'Syne', sans-serif;font-size:52px;color:var(--gold);line-height:1;}
+  .num-label{font-size: 13px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+  .num-sub{font-size: 12px;color:#6a8aaa;margin-top:2px;}
+
+  /* ============ TEASER SECTION ============ */
+  .teaser{padding:80px 48px;background:var(--deep);}
+  .teaser-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .section-label{font-size: 12px;letter-spacing: 2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:16px;}
+  .section-label::before{content:'';width:32px;height:1px;background:var(--gold);}
+  .section-title{font-family: 'Inter', sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
+  .section-title strong{font-weight:600;color:var(--gold);}
+  .teaser-body p{font-family: 'Inter', sans-serif;font-size:17px;line-height:1.85;color:#c0d4e8;margin-bottom:16px;}
+  .teaser-pillars{display:flex;flex-direction:column;gap:2px;margin-top:8px;}
+  .teaser-pillar{padding:18px 20px;background:var(--panel);border-left:2px solid var(--border);transition:border-color 0.3s;}
+  .teaser-pillar:hover{border-left-color:var(--gold);}
+  .teaser-pillar-title{font-family: 'Syne', sans-serif;font-size:15px;letter-spacing:2px;color:var(--white);margin-bottom:4px;}
+  .teaser-pillar-desc{font-size: 12px;color:#90aac4;line-height:1.6;}
+
+  /* Locked content indicator */
+  .locked-preview{background:var(--panel);border:1px solid var(--border);padding:28px;position:relative;overflow:hidden;}
+  .locked-overlay{position:absolute;inset:0;backdrop-filter:blur(5px);background:rgba(6,8,10,0.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:2;}
+  .locked-icon{font-size:32px;}
+  .locked-label{font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--gold);}
+  .locked-sub{font-size: 12px;color:var(--muted);text-align:center;max-width:220px;line-height:1.6;}
+  .locked-content-preview{opacity:0.15;pointer-events:none;user-select:none;}
+  .locked-content-preview h3{font-family: 'Syne', sans-serif;font-size:20px;letter-spacing:2px;color:var(--white);margin-bottom:12px;}
+  .locked-row{height:10px;background:var(--muted);border-radius:2px;margin-bottom:8px;}
+
+  /* ============ FORECAST ============ */
+  .forecast{padding:72px 48px;background:var(--deep);}
+  .forecast-inner{max-width:1100px;margin:0 auto;}
+  .forecast-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px;}
+
+  /* Chart bars */
+  .chart-box{background:var(--panel);border:1px solid var(--border);padding:28px 24px;}
+  .chart-title{font-size: 13px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+  .chart-bars{display:flex;align-items:flex-end;gap:10px;height:160px;border-bottom:1px solid var(--border);padding-bottom:0;}
+  .chart-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;}
+  .chart-bar{background:linear-gradient(to top,rgba(200,169,110,0.3),var(--gold));width:100%;transition:height 1s ease;border-top:2px solid var(--gold);}
+  .chart-bar-label{font-size: 12px;letter-spacing:1px;color:var(--muted);white-space:nowrap;}
+  .chart-bar-val{font-family: 'Syne', sans-serif;font-size:13px;color:var(--gold);}
+  .chart-note{font-size: 13px;color:var(--muted);margin-top:10px;line-height:1.5;}
+
+  /* Growth indicators */
+  .growth-items{display:flex;flex-direction:column;gap:16px;}
+  .growth-item{background:var(--panel);border:1px solid var(--border);padding:20px 22px;display:flex;align-items:center;gap:20px;transition:border-color 0.3s;}
+  .growth-item:hover{border-color:rgba(200,169,110,0.25);}
+  .growth-icon{font-size:22px;flex-shrink:0;}
+  .growth-title{font-family: 'Syne', sans-serif;font-size:15px;letter-spacing:2px;color:var(--white);margin-bottom:3px;}
+  .growth-desc{font-size: 12px;color:#90aac4;line-height:1.6;}
+  .growth-pct{margin-left:auto;font-family: 'Syne', sans-serif;font-size:26px;color:var(--green);flex-shrink:0;}
+
+  .forecast-disclaimer{margin-top:24px;padding:14px 18px;border:1px solid var(--border);background:var(--panel);font-size: 13px;color:var(--muted);line-height:1.7;}
+
+  /* ============ REQUEST FORM ============ */
+  .request-section{padding:72px 48px;background:var(--deep);border-top:1px solid var(--border);}
+  .request-inner{max-width:800px;margin:0 auto;}
+  .form-box{background:var(--panel);border:1px solid var(--border);}
+  .form-box-header{padding:24px 32px;border-bottom:1px solid var(--border);background:rgba(200,169,110,0.04);}
+  .form-box-title{font-family: 'Syne', sans-serif;font-size:20px;letter-spacing: 1.5px;color:var(--white);}
+  .form-box-sub{font-size: 12px;letter-spacing:1px;color:var(--muted);margin-top:4px;}
+  .form-box-body{padding:28px 32px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-group{margin-bottom:16px;}
+  .form-label{font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+  .form-input{width:100%;background:var(--deep);border:1px solid var(--border);padding:12px 16px;font-family: 'Inter', sans-serif;font-size: 13px;color:var(--white);outline:none;transition:border-color 0.3s;}
+  .form-input:focus{border-color:rgba(200,169,110,0.5);}
+  .form-input::placeholder{color:var(--muted);}
+  select.form-input{color:var(--white);}
+  select.form-input option{background:var(--panel);}
+  textarea.form-input{height:100px;resize:vertical;}
+  .form-privacy{font-size: 13px;letter-spacing:1px;color:var(--muted);line-height:1.6;margin-bottom:20px;padding:10px 14px;border:1px solid var(--border);background:var(--deep);}
+  .form-privacy::before{content:'🔒 ';}
+  .btn-submit{background:var(--gold);border:none;padding:16px 40px;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;color:var(--black);cursor:pointer;transition:all 0.3s;font-weight:400;width:100%;}
+  .btn-submit:hover{background:var(--gold-light);}
+  .form-success{display:none;padding:20px;text-align:center;border:1px solid rgba(46,204,113,0.3);background:rgba(46,204,113,0.05);}
+  .form-success.show{display:block;}
+  .form-success-icon{font-size:28px;margin-bottom:8px;}
+  .form-success-title{font-family: 'Syne', sans-serif;font-size:18px;letter-spacing:2px;color:var(--green);margin-bottom:4px;}
+  .form-success-sub{font-size: 12px;color:var(--muted);}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--deep);border-top:1px solid var(--border);padding:48px 48px 28px;}
+  .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1200px;margin:0 auto 32px;}
+  .footer-logo{font-family: 'Syne', sans-serif;font-size:24px;letter-spacing: 2px;color:var(--gold);margin-bottom:4px;}
+  .footer-tagline{font-size: 12px;letter-spacing: 1.5px;text-transform:uppercase;color:#7a94ae;margin-bottom:16px;}
+  .footer-desc{font-family: 'Inter', sans-serif;font-size:14px;line-height:1.8;color:#8aaac4;}
+  .footer-col-title{font-size: 13px;letter-spacing: 2px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size: 13px;color:#8aaac4;text-decoration:none;transition:color 0.3s;}
+  .footer-links a:hover{color:var(--white);}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-copy{font-size: 13px;letter-spacing:2px;color:var(--muted);}
+  .footer-badge{display:flex;gap:16px;}
+  .footer-badge span{font-size: 12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:5px 12px;}
+  
+  
+
+  @media(max-width:1024px){
+    .teaser-inner,.forecast-grid{grid-template-columns:1fr;}
+    .numbers-inner{grid-template-columns:repeat(2,1fr);}
+    .num-item:nth-child(2){border-right:none;}
+  }
+  @media(max-width:640px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .hero{padding:0 20px 48px;min-height:auto;padding-top:120px;}
+    .numbers-inner{grid-template-columns:repeat(2,1fr);}
+    .teaser,.forecast,.request-section{padding:48px 20px;}
+    .form-row{grid-template-columns:1fr;}
+    .form-box-header,.form-box-body{padding:20px;}
+    .footer-main{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column;text-align:center;}
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    display:flex;align-items:center;gap:8px;cursor:pointer;
+    background:var(--panel);border:1px solid var(--border);
+    padding:5px 10px;transition:border-color .3s;flex-shrink:0;
+  }
+  .lang-toggle:hover { border-color:rgba(200,169,110,0.4); }
+  .lang-es,.lang-en {
+    font-size: 13px;letter-spacing:2px;font-family: 'Inter', sans-serif;
+    text-transform:uppercase;color:var(--gold);transition:opacity .3s;
+  }
+  .lang-track {
+    width:38px;height:18px;background:var(--deep);border:1px solid var(--border);
+    border-radius:9px;position:relative;
+  }
+  .lang-slider {
+    width:16px;height:14px;background:var(--gold);border-radius:7px;
+    position:absolute;top:1px;left:1px;transition:transform .3s;
+  }
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; z-index:300; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+    background:rgba(6,8,10,0.98); z-index:200;
+    flex-direction:column; align-items:center; justify-content:center; gap:0;
+  }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a {
+    font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 2px;
+    text-transform:uppercase; text-decoration:none; color:#b0c4d8;
+    padding:18px 40px; width:100%; text-align:center;
+    border-bottom:1px solid rgba(200,169,110,0.06);
+    transition:color 0.2s, background 0.2s;
+  }
+  .mobile-menu a:hover { color:var(--gold); background:rgba(200,169,110,0.04); }
+  .mobile-menu .mob-cta {
+    margin-top:20px; background:var(--gold); color:var(--black) !important;
+    font-size: 13px; letter-spacing: 1.5px; padding:16px 48px;
+    border:none; width:auto;
+  }
+  .mobile-menu .mob-lang {
+    margin-top:12px; display:flex; align-items:center; gap:12px;
+    font-size: 12px; letter-spacing: 1.5px; color:var(--gold);
+  }
+
+  
+  @media (max-width:640px) {
+    
+    .chatbot-toggle { bottom: 32px !important; right: 20px !important; }
+  }
+  @media (max-width: 640px) {
+    .hamburger { display:flex; }
+  }
+
+  
+  /* Better body readability */
+  body { line-height: 1.6; letter-spacing: -0.01em; }
+
+  /* Nav — lighter, cleaner */
+  nav {
+    background: rgba(13,21,38,0.97) !important;
+    border-bottom: 1px solid rgba(200,169,110,0.15) !important;
+  }
+  .nav-logo-main { font-family: 'Syne', sans-serif !important; font-size: 20px !important; letter-spacing: 3px !important; }
+  .nav-logo-sub  { font-size: 10px !important; letter-spacing: 2px !important; color: var(--muted) !important; }
+  .nav-links a   { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; font-weight: 500 !important; }
+
+  /* Section labels — less monospace aggressive */
+  .section-label {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: var(--gold) !important;
+  }
+
+  /* Section titles — bold, clear */
+  .section-title, h1, h2, h3 {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .section-title strong { font-weight: 800 !important; }
+
+  /* Body text — comfortable to read */
+  p, .lesson-desc, .phil-text, .path-desc, .tip-text, .faq-a p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    font-weight: 400 !important;
+    color: #b8cce0 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Cards — softer navy with subtle border */
+  .lesson-card, .phil-card, .path-card, .tip-card, .service-card {
+    background: var(--panel) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px !important;
+  }
+  .lesson-card:hover, .phil-card:hover, .path-card:hover, .tip-card:hover {
+    background: #162040 !important;
+    border-color: rgba(200,169,110,0.3) !important;
+  }
+
+  /* Lesson title text readable */
+  .lesson-title, .phil-title, .path-title, .tip-title {
+    font-family: 'Syne', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    color: var(--white) !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Meta labels on cards */
+  .lesson-meta, .path-level, .section-label::before {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+  }
+
+  /* Buttons — modern, clean */
+  .btn-primary, .nav-cta, .btn-submit, .btn-gold {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    font-size: 14px !important;
+    border-radius: 3px !important;
+  }
+  .tab-btn, .fmt-btn {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* FAQ readable */
+  .faq-q-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Form inputs */
+  .fi, .fa, .fs, input, textarea, select {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    border-radius: 3px !important;
+  }
+
+  /* Ticker text */
+  .ticker-track { font-family: 'Inter', sans-serif !important; font-size: 12px !important; font-weight: 500 !important; letter-spacing: 2px !important; }
+
+  /* Hero badge */
+  .hero-badge, .hero-eyebrow {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Content tags on lesson cards */
+  .ctag {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 2px !important;
+  }
+
+  /* Hide custom cursor elements */
+  .cursor, .cursor-ring { display: none !important; }
+
+  /* Footer */
+  footer { background: #060d1a !important; }
+  .ft-desc { font-family: 'Inter', sans-serif !important; font-size: 14px !important; line-height: 1.7 !important; }
+  .ft-ul a { font-family: 'Inter', sans-serif !important; font-size: 13px !important; }
+  .ft-copy { font-family: 'Inter', sans-serif !important; font-size: 12px !important; letter-spacing: 0.5px !important; }
+
+  /* Mobile menu */
+  .mobile-menu a { font-family: 'Inter', sans-serif !important; letter-spacing: 1px !important; font-size: 15px !important; }
+  .hamburger span { background: var(--white) !important; }
+
+  /* Newsletter */
+  .nl-title { font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .nl-sub, .nl-in { font-family: 'Inter', sans-serif !important; font-size: 14px !important; }
+  .nl-btn { font-family: 'Inter', sans-serif !important; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.5px !important; }
+
+  /* Quote section */
+  .quote-body { font-family: 'Syne', sans-serif !important; font-size: clamp(20px, 2.5vw, 32px) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+
+
+  
+  /* ══════════════════════════════════════
+     LAM BRAND EXACT COLORS v6
+  ══════════════════════════════════════ */
+
+  /* ── Base ── */
+  html, body { background: #ffffff !important; color: #0d1f0d !important; }
+
+  /* ── Nav ── */
+  nav {
+    background: rgba(255,255,255,0.98) !important;
+    border-bottom: 2px solid #7fd85a !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+  }
+  .nav-logo-main { color: #0d1f0d !important; font-weight: 800 !important; }
+  .nav-logo-sub  { color: #6a8a6a !important; }
+  .nav-links a   { color: #3d5a3d !important; font-weight: 500 !important; }
+  .nav-links a:hover, .nav-links a.active { color: #1a6a0a !important; }
+  .nav-cta {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: #6acc44 !important; }
+
+  /* ── Section label ── */
+  .section-label { color: #1a6a0a !important; }
+
+  /* ── Section titles & body ── */
+  .section-title, h1, h2, h3 { color: #0d1f0d !important; }
+  .section-sub, .section-desc { color: #3d5a3d !important; }
+  p { color: #3d5a3d !important; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(150deg, #ffffff 0%, #f0fae8 60%, #e8f8f9 100%) !important;
+    min-height: 100vh !important; position: relative !important;
+  }
+  .hero-bg {
+    background: radial-gradient(ellipse at 70% 40%, rgba(37,211,218,0.1), transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(127,216,90,0.08), transparent 50%) !important;
+    position: absolute !important; inset: 0 !important;
+  }
+  .hero-grid {
+    position: absolute !important; inset: 0 !important;
+    background-image:
+      linear-gradient(rgba(127,216,90,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64,168,231,0.05) 1px, transparent 1px) !important;
+    background-size: 60px 60px !important;
+  }
+  .hero-content { position: relative !important; z-index: 2 !important; }
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; }
+  .hero-badge {
+    border-color: rgba(127,216,90,0.5) !important;
+    color: #1a6a0a !important;
+    background: rgba(127,216,90,0.1) !important;
+  }
+  .stat-num { color: #1a6a0a !important; }
+  .stat-label { color: #6a8a6a !important; }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important; font-weight: 700 !important;
+  }
+  .btn-primary:hover, .btn-gold:hover { background: #6acc44 !important; }
+  .btn-outline {
+    border-color: #7fd85a !important; color: #1a6a0a !important;
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.1) !important; }
+
+  /* ── Sections — fill empty white areas ── */
+  .about      { background: #f4faf0 !important; }
+  .services   { background: #eef6ff !important; }
+  .process    { background: #f4faf0 !important; }
+  .gallery    { background: #eef6ff !important; }
+  .contact    { background: #f4faf0 !important; }
+  .lessons    { background: #eef6ff !important; }
+  .tips       { background: #f4faf0 !important; }
+  .ask        { background: #eef6ff !important; }
+  .faq        { background: #f4faf0 !important; }
+  .paths      { background: #eef6ff !important; }
+  .newsletter-section { background: #f4faf0 !important; }
+  .quote-section {
+    background: linear-gradient(135deg, #f0fae8, #e8f8f9) !important;
+    border-top: 1px solid rgba(127,216,90,0.2) !important;
+    border-bottom: 1px solid rgba(127,216,90,0.2) !important;
+  }
+  .quote-body { color: #0d1f0d !important; }
+  .quote-name { color: #1a6a0a !important; }
+
+  /* ── Cards — white on tinted bg ── */
+  .lesson-card, .service-card, .tip-card, .path-card, .phil-card, .faq-item {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04) !important;
+    border-radius: 8px !important;
+  }
+  .lesson-card:hover, .service-card:hover, .tip-card:hover, .path-card:hover {
+    border-color: #7fd85a !important;
+    box-shadow: 0 6px 24px rgba(127,216,90,0.18) !important;
+    transform: translateY(-2px) !important;
+  }
+  .lesson-title, .service-title, .tip-title, .path-title, .phil-title {
+    color: #0d1f0d !important;
+  }
+  .lesson-desc, .service-desc, .tip-text, .phil-text {
+    color: #4a6a4a !important;
+  }
+  .lesson-meta { color: #6a8a6a !important; }
+
+  /* ── Tags ── */
+  .ctag {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(26,122,10,0.2) !important;
+    color: #1a6a0a !important;
+  }
+  .ctag.blue {
+    background: rgba(64,168,231,0.1) !important;
+    border-color: rgba(64,168,231,0.3) !important;
+    color: #1a5a8a !important;
+  }
+  .ctag.teal {
+    background: rgba(37,211,218,0.1) !important;
+    border-color: rgba(37,211,218,0.3) !important;
+    color: #0a6a7a !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-wrap { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .ticker-track { color: #0d1f0d !important; font-weight: 600 !important; }
+
+  /* ── Process ── */
+  .process-num {
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+  }
+  .process-title { color: #0d1f0d !important; }
+  .process-desc  { color: #3d5a3d !important; }
+  .process-bar   { background: linear-gradient(90deg, #7fd85a, #25d3da) !important; }
+  .process-connector { background: rgba(127,216,90,0.3) !important; }
+
+  /* ── Service icons ── */
+  .service-icon-wrap {
+    background: rgba(127,216,90,0.1) !important;
+    border-color: rgba(127,216,90,0.3) !important;
+  }
+
+  /* ── Forms ── */
+  .form-lbl { color: #0d1f0d !important; font-weight: 600 !important; }
+  input, textarea, select {
+    background: #ffffff !important;
+    border: 1px solid #c8dcc0 !important;
+    color: #0d1f0d !important;
+    border-radius: 4px !important;
+  }
+  input:focus, textarea:focus {
+    border-color: #7fd85a !important;
+    box-shadow: 0 0 0 3px rgba(127,216,90,0.15) !important;
+    outline: none !important;
+  }
+  input::placeholder, textarea::placeholder { color: #9ab09a !important; }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    color: #3d5a3d !important; background: transparent !important;
+    border-color: #c8dcc0 !important;
+  }
+  .tab-btn.active, .fmt-btn.active {
+    background: #7fd85a !important; color: #0d1f0d !important;
+    border-color: #7fd85a !important;
+  }
+  .tab-btn:hover { color: #1a6a0a !important; border-color: #7fd85a !important; }
+
+  /* ── Newsletter ── */
+  .newsletter { background: linear-gradient(135deg, #7fd85a, #25d3da) !important; }
+  .nl-title, .nl-sub { color: #0d1f0d !important; }
+  .nl-btn { background: #0d1f0d !important; color: #7fd85a !important; border: none !important; }
+  .nl-in { border-color: rgba(0,0,0,0.15) !important; }
+
+  /* ── Lang toggle ── */
+  .lt-track { border-color: rgba(127,216,90,0.5) !important; }
+  .lt-knob { background: #7fd85a !important; }
+  .lt-label { color: #0d1f0d !important; }
+
+  /* ── Chatbot ── */
+  .chatbot-btn-main {
+    background: linear-gradient(135deg, #7fd85a, #25d3da) !important;
+    color: #0d1f0d !important;
+  }
+  .chatbot-float {
+    background: #ffffff !important;
+    border: 1px solid #d0e8c8 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+  }
+  .chatbot-float-title { color: #0d1f0d !important; }
+
+  /* ── Mobile menu ── */
+  .hamburger span { background: #0d1f0d !important; }
+  .mobile-menu {
+    background: rgba(255,255,255,0.99) !important;
+    border-top: 2px solid #7fd85a !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+  }
+  .mobile-menu a {
+    color: #0d1f0d !important;
+    border-bottom-color: rgba(127,216,90,0.12) !important;
+    font-weight: 500 !important;
+  }
+  .mobile-menu a:hover { color: #1a6a0a !important; }
+  .mobile-nav-cta { background: #7fd85a !important; color: #0d1f0d !important; }
+
+  /* ── Footer ── */
+  footer {
+    background: #0d1f0d !important;
+    border-top: 3px solid #7fd85a !important;
+  }
+  .ft-logo { color: #7fd85a !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+  .ft-h { color: #aacaaa !important; letter-spacing: 1.5px !important; }
+  .ft-ul a:hover { color: #7fd85a !important; }
+  .ft-divider { background: rgba(127,216,90,0.15) !important; }
+
+  /* ── FAQ ── */
+  .faq-q-text { color: #0d1f0d !important; font-weight: 500 !important; }
+  .faq-a p { color: #3d5a3d !important; }
+  .faq-icon { color: #7fd85a !important; }
+
+  /* ── Remove leftover dark backgrounds ── */
+  [style*="background: #060"] { background: #f4faf0 !important; }
+  [style*="background:#060"]  { background: #f4faf0 !important; }
+  [style*="background: #0d1"] { background: #f4faf0 !important; }
+  [style*="background:#0d1"]  { background: #f4faf0 !important; }
+  [style*="background: #111"] { background: #f4faf0 !important; }
+  [style*="background:#111"]  { background: #f4faf0 !important; }
+
+
+  /* ── VISIBILITY FIXES v6.1 ── */
+
+  /* Hero title — dark on light bg */
+  .hero-title { color: #0d1f0d !important; }
+  .hero-title em { color: #1a7a0a !important; }
+  .hero-subtitle { color: #3d5a3d !important; font-size: 17px !important; line-height: 1.7 !important; }
+  .hero-badge { color: #1a6a0a !important; border-color: rgba(127,216,90,0.4) !important; background: rgba(127,216,90,0.1) !important; }
+  .stat-num { color: #1a7a0a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .stat-label { color: #5a7a5a !important; font-size: 11px !important; letter-spacing: 1px !important; }
+  .stat-divider { background: rgba(127,216,90,0.3) !important; }
+  .stat-item { opacity: 1 !important; visibility: visible !important; }
+
+  /* All text that was white → dark */
+  .section-title, .section-title strong { color: #0d1f0d !important; }
+  .section-sub { color: #3d5a3d !important; }
+  .about-text p, .service-desc, .process-desc, .contact p { color: #4a6a4a !important; }
+
+  /* Service cards full visibility */
+  .service-card { opacity: 1 !important; visibility: visible !important; }
+  .service-title { color: #0d1f0d !important; font-family: 'Syne', sans-serif !important; font-weight: 700 !important; }
+  .service-icon { opacity: 1 !important; }
+
+  /* Process steps */
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-title { color: #0d1f0d !important; }
+  .process-num { color: #1a7a0a !important; border-color: rgba(127,216,90,0.35) !important; }
+
+  /* Contact */
+  .ask-right .section-title { color: #0d1f0d !important; }
+  .contact-intro { color: #4a6a4a !important; }
+
+  /* Btn outline on light bg */
+  .btn-outline { 
+    border: 2px solid #1a7a0a !important; 
+    color: #1a7a0a !important; 
+    background: transparent !important;
+  }
+  .btn-outline:hover { background: rgba(127,216,90,0.12) !important; }
+
+  /* Hero actions buttons visible */
+  .hero-actions { opacity: 1 !important; visibility: visible !important; }
+  .btn-primary { 
+    background: #7fd85a !important; color: #0d1f0d !important; 
+    font-weight: 700 !important; opacity: 1 !important;
+  }
+
+  /* Fix any elements with var(--white) text */
+  .hero-content * { visibility: visible !important; }
+  .hero-stats { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Nav text dark */
+  .nav-links a { color: #2a3a2a !important; }
+  .nav-logo-main { color: #0d1f0d !important; }
+  .nav-logo-sub { color: #5a7a5a !important; }
+
+  /* Section backgrounds solid — no transparent fallback */
+  .services   { background: #eef6ff !important; }
+  .about      { background: #f4faf0 !important; }
+  .process    { background: #f4faf0 !important; }
+  .contact    { background: #eef6ff !important; }
+  footer      { background: #0d1f0d !important; }
+
+  /* Footer text */  
+  .ft-logo { color: #7fd85a !important; font-family: 'Syne', sans-serif !important; font-weight: 800 !important; }
+  .ft-h { color: #aacaaa !important; }
+  .ft-desc, .ft-ul a, .ft-copy { color: #7aaa7a !important; }
+
+
+  /* ── FORCE ALL CONTENT VISIBLE (fix reveal + white-on-white) ── */
+
+  /* Disable scroll-based reveal — show everything */
+  .reveal { 
+    opacity: 1 !important; 
+    transform: none !important; 
+    visibility: visible !important;
+  }
+  .reveal.visible { opacity: 1 !important; transform: none !important; }
+
+  /* Process step titles white-on-light fix */
+  .process-title, .process-step h3, .step-title {
+    color: #0d1f0d !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .process-step { opacity: 1 !important; visibility: visible !important; }
+  .process-num { 
+    color: #1a7a0a !important; 
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.1) !important;
+    opacity: 1 !important;
+  }
+  .process-desc { color: #4a6a4a !important; opacity: 1 !important; }
+
+  /* Service cards */
+  .service-card, .service-title, .service-desc, .service-icon {
+    opacity: 1 !important; visibility: visible !important;
+  }
+  .service-title { color: #0d1f0d !important; }
+  .service-desc  { color: #4a6a4a !important; }
+
+  /* About section */
+  .about-text, .about-visual { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Section labels and titles */
+  .section-label { opacity: 1 !important; visibility: visible !important; color: #1a6a0a !important; }
+  .section-title { opacity: 1 !important; visibility: visible !important; color: #0d1f0d !important; }
+  
+  /* Contact section */
+  .contact-form, .ask-right, .ask-left { opacity: 1 !important; visibility: visible !important; }
+  
+  /* Fix any element with opacity: 0 that should be visible */
+  .hero-badge, .hero-title, .hero-subtitle, .hero-actions, .hero-stats,
+  .stat-item, .stat-num, .stat-label {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+  /* Gallery items */
+  .gallery-item { opacity: 1 !important; }
+
+  /* Ticker */
+  .ticker-wrap { opacity: 1 !important; }
+
+  /* All cards generally */
+  [class*="card"], [class*="step"], [class*="item"] {
+    opacity: 1 !important; visibility: visible !important;
+  }
+
+
+  /* ══════════════════════════════════════════
+     TYPOGRAPHY & DESIGN REFINEMENT v7
+     Plus Jakarta Sans + Fraunces
+  ══════════════════════════════════════════ */
+
+  /* ── Base typography ── */
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    letter-spacing: -0.01em !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  /* ── Display titles — Fraunces (editorial, elegant, has character) ── */
+  .hero-title,
+  .section-title,
+  h1, h2 {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* ── Hero title — big, confident, not blocky ── */
+  .hero-title {
+    font-size: clamp(42px, 6.5vw, 96px) !important;
+    font-weight: 600 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em !important;
+    color: #0d1f0d !important;
+  }
+  .hero-title em {
+    font-style: italic !important;
+    color: #1a8a0a !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: clamp(28px, 4vw, 52px) !important;
+    font-weight: 600 !important;
+    color: #0d1f0d !important;
+    margin-bottom: 16px !important;
+  }
+  .section-title strong {
+    font-weight: 700 !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── h3 — Jakarta Sans Bold (card titles, step titles) ── */
+  h3, .service-title, .process-title, .step-title,
+  .lesson-title, .path-title, .phil-title, .tip-title,
+  .faq-q-text, .nl-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.25 !important;
+    color: #0d1f0d !important;
+  }
+  .service-title { font-size: 18px !important; }
+  .process-title { font-size: 20px !important; color: #0d1f0d !important; }
+
+  /* ── Section labels — small caps, refined ── */
+  .section-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+    margin-bottom: 14px !important;
+    display: block !important;
+  }
+
+  /* ── Body text ── */
+  p, .service-desc, .process-desc, .lesson-desc,
+  .path-desc, .tip-text, .phil-text, .ft-desc,
+  .hero-subtitle, .section-sub, .contact-intro {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+    letter-spacing: -0.005em !important;
+  }
+  .hero-subtitle {
+    font-size: clamp(15px, 1.6vw, 18px) !important;
+    color: #4a6a4a !important;
+    max-width: 500px !important;
+  }
+  p { font-size: 15px !important; color: #4a6a4a !important; }
+
+  /* ── Nav ── */
+  .nav-logo-main {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.03em !important;
+    color: #0d1f0d !important;
+  }
+  .nav-logo-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    color: #7a9a7a !important;
+    text-transform: uppercase !important;
+  }
+  .nav-links a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px !important;
+    color: #2a4a2a !important;
+  }
+  .nav-cta {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+    padding: 10px 22px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary, .btn-gold, .btn-submit, .btn-outline {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.2px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ── Stats ── */
+  .stat-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: clamp(36px, 5vw, 60px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.04em !important;
+    color: #1a7a0a !important;
+  }
+  .stat-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #6a8a6a !important;
+    margin-top: 4px !important;
+  }
+
+  /* ── Process numbers ── */
+  .process-num {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: 28px !important;
+    color: #1a7a0a !important;
+    border: 1.5px solid rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    width: 56px !important; height: 56px !important;
+    border-radius: 50% !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+  }
+
+  /* ── Tags ── */
+  .ctag {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 3px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* ── Ticker ── */
+  .ticker-track {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Hero badge ── */
+  .hero-badge {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a6a0a !important;
+    border-color: rgba(127,216,90,0.4) !important;
+    background: rgba(127,216,90,0.08) !important;
+    padding: 8px 16px !important;
+    border-radius: 3px !important;
+    display: inline-block !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* ── Form labels ── */
+  .form-lbl, label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  input, textarea, select {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── Footer ── */
+  .ft-logo {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    letter-spacing: -0.02em !important;
+    color: #7fd85a !important;
+  }
+  .ft-h {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #aacaaa !important;
+  }
+  .ft-ul a, .ft-desc, .ft-copy {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #7aaa7a !important;
+  }
+
+  /* ── Mobile menu ── */
+  .mobile-menu a {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.3px !important;
+    color: #0d1f0d !important;
+  }
+
+  /* ── Tabs ── */
+  .tab-btn, .fmt-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.2px !important;
+  }
+
+  /* ── Newsletter ── */
+  .nl-title {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+    font-size: clamp(22px, 3vw, 32px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+  }
+  .nl-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 400 !important;
+    color: #2a4a2a !important;
+  }
+  .nl-btn {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Quote ── */
+  .quote-body {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: clamp(20px, 2.5vw, 30px) !important;
+    letter-spacing: -0.02em !important;
+    color: #0d1f0d !important;
+    line-height: 1.4 !important;
+  }
+  .quote-name {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #1a7a0a !important;
+  }
+
+  /* ── Chatbot ── */
+  .chatbot-float-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700 !important;
+  }
+  .chatbot-float-input, .chatbot-msg {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 13px !important;
+  }
+
+  /* ── Contact info ── */
+  .contact-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #2a4a2a !important;
+  }
+  .contact-value {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #4a6a4a !important;
+  }
+
+
+  @media (max-width: 480px) {
+    .numbers-inner { grid-template-columns: 1fr !important; }
+    .num-item { border-right: none !important; border-bottom: 1px solid var(--border); }
+    .num-item:last-child { border-bottom: none; }
+    .hero-cta-group { flex-direction: column; width: 100%; }
+    .btn-gold, .btn-ghost { width: 100%; text-align: center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-main">L.A.M. Services</span>
+    <span class="nav-logo-sub">Pump Experts · Puerto Rico</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a></li>
+    <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+    <li><a href="productos.html"><span data-i18n="nav.productos">Productos</span></a></li>
+    <li><a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a></li>
+    <li><a href="inversionistas.html" class="active"><span data-i18n="nav.inversionistas">Inversionistas</span></a></li>
+    <li><a href="https://wa.link/dni2dj" class="nav-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="lang-toggle" onclick="toggleLang()" title="ES / EN">
+    <span class="lang-es">ES</span>
+    <div class="lang-track"><div class="lang-slider"></div></div>
+    <span class="lang-en">EN</span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a>
+  <a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a>
+  <a href="productos.html"><span data-i18n="nav.productos">Productos</span></a>
+  <a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a>
+  <a href="inversionistas.html"><span data-i18n="nav.inversionistas">Inversionistas</span></a>
+  <a href="https://wa.link/dni2dj" class="mob-cta" target="_blank"><span data-i18n="nav.cta">Consulta Gratis</span></a>
+  <div class="mob-lang">
+    <button onclick="toggleLang();closeMobileMenu()" style="background:none;border:none;cursor:pointer;font-family: 'Inter', sans-serif;font-size: 12px;letter-spacing: 1.5px;color:var(--gold);">ES / EN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-lines">
+    <div class="h-line"></div><div class="h-line"></div>
+    <div class="h-line"></div><div class="h-line"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Acceso Restringido · Solo Inversionistas</div>
+    <h1 class="hero-title">
+      Una Empresa<br>
+      con <strong>30 Años</strong><br>
+      de <em>Resultados</em>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">L.A.M. Services LLC representa una oportunidad única de participar en el crecimiento de la infraestructura hídrica de Puerto Rico.</p>
+      <div class="hero-cta-group">
+        <a href="#solicitar" class="btn-gold"><span data-i18n="inv.btn1">Solicitar Información →</span></a>
+        <a href="#oportunidad" class="btn-ghost"><span data-i18n="inv.btn2">Ver Oportunidad</span></a>
+        <div class="hero-confidential">Información bajo NDA disponible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS STRIP -->
+<div class="numbers-strip reveal">
+  <div class="numbers-inner">
+    <div class="num-item">
+      <div class="num-value">30+</div>
+      <div class="num-label">Años en Operación</div>
+      <div class="num-sub">Desde 1993 · Sin interrupciones</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">500+</div>
+      <div class="num-label">Proyectos Completados</div>
+      <div class="num-sub">Residencial · Comercial · Industrial</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">7</div>
+      <div class="num-label">Cifras de Ingresos</div>
+      <div class="num-sub">Negocio establecido y rentable</div>
+    </div>
+    <div class="num-item">
+      <div class="num-value">PR</div>
+      <div class="num-label">Mercado Exclusivo</div>
+      <div class="num-sub">Cobertura de toda la isla</div>
+    </div>
+  </div>
+</div>
+
+<!-- TEASER -->
+<section class="teaser reveal" id="oportunidad">
+  <div class="teaser-inner">
+    <div class="teaser-body">
+      <div class="section-label">La Oportunidad</div>
+      <h2 class="section-title">Por qué Invertir en<br><strong>Infraestructura Hídrica</strong></h2>
+      <p>Puerto Rico enfrenta una de las mayores crisis de infraestructura de agua de su historia. La AAA opera con una red envejecida y miles de propiedades —residenciales, comerciales e industriales— dependen de sistemas privados de bombeo.</p>
+      <p>L.A.M. Services LLC está posicionada estratégicamente para capturar el crecimiento de este mercado esencial, con tres décadas de relaciones construidas y una reputación que genera negocios recurrentes.</p>
+      <div class="teaser-pillars">
+        <div class="teaser-pillar">
+          <div class="teaser-pillar-title">Mercado Inelástico</div>
+          <div class="teaser-pillar-desc">El agua no es opcional. La demanda de sistemas de bombeo es constante independientemente del ciclo económico.</div>
+        </div>
+        <div class="teaser-pillar">
+          <div class="teaser-pillar-title">Posición Dominante</div>
+          <div class="teaser-pillar-desc">30+ años de relaciones con los mejores distribuidores mundiales: Grundfos, Xylem, Flowserve.</div>
+        </div>
+        <div class="teaser-pillar">
+          <div class="teaser-pillar-title">Crecimiento Impulsado por Regulación</div>
+          <div class="teaser-pillar-desc">Nuevas normativas de la AAA y NFPA generan demanda obligatoria de modernización de sistemas en toda la isla.</div>
+        </div>
+        <div class="teaser-pillar">
+          <div class="teaser-pillar-title">Ingresos Recurrentes</div>
+          <div class="teaser-pillar-desc">Los contratos de mantenimiento preventivo generan ingresos predecibles y márgenes superiores al 40%.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCKED PREVIEW -->
+    <div>
+      <div class="section-label" style="margin-bottom:16px">Documento Confidencial</div>
+      <div class="locked-preview" style="margin-bottom:16px">
+        <div class="locked-overlay">
+          <div class="locked-icon">🔒</div>
+          <div class="locked-label">Información Restringida</div>
+          <div class="locked-sub">Proyecciones financieras, estados de resultados y estructura de inversión disponibles previa calificación.</div>
+          <a href="#solicitar" class="btn-gold" style="margin-top:8px;font-size: 13px;padding:10px 20px;">Solicitar Acceso →</a>
+        </div>
+        <div class="locked-content-preview">
+          <h3>Investment Summary — Confidential</h3>
+          <div class="locked-row" style="width:80%"></div>
+          <div class="locked-row" style="width:60%"></div>
+          <div class="locked-row" style="width:90%"></div>
+          <div class="locked-row" style="width:70%"></div>
+          <div class="locked-row" style="width:55%"></div>
+          <div class="locked-row" style="width:85%"></div>
+          <div class="locked-row" style="width:65%"></div>
+        </div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--border);padding:18px 20px;">
+        <div style="font-size: 13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Lo que recibirá tras calificación</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li style="font-size: 12px;color:#90aac4;padding-left:16px;position:relative;">
+            <span style="position:absolute;left:0;color:var(--gold)">›</span>Investment Summary (15 páginas)
+          </li>
+          <li style="font-size: 12px;color:#90aac4;padding-left:16px;position:relative;">
+            <span style="position:absolute;left:0;color:var(--gold)">›</span>Estados Financieros Auditados 2022–2024
+          </li>
+          <li style="font-size: 12px;color:#90aac4;padding-left:16px;position:relative;">
+            <span style="position:absolute;left:0;color:var(--gold)">›</span>Proyecciones 2025–2030 con escenarios
+          </li>
+          <li style="font-size: 12px;color:#90aac4;padding-left:16px;position:relative;">
+            <span style="position:absolute;left:0;color:var(--gold)">›</span>Estructura de participación propuesta
+          </li>
+          <li style="font-size: 12px;color:#90aac4;padding-left:16px;position:relative;">
+            <span style="position:absolute;left:0;color:var(--gold)">›</span>Reunión virtual con liderazgo (bajo NDA)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORECAST -->
+<section class="forecast reveal">
+  <div class="forecast-inner">
+    <div class="section-label">Potencial de Crecimiento</div>
+    <h2 class="section-title">El Mercado de Agua en<br><strong>Puerto Rico — Proyección</strong></h2>
+
+    <div class="forecast-grid">
+      <!-- Revenue Chart -->
+      <div>
+        <div class="chart-box" id="revenueChart">
+          <div class="chart-title">Crecimiento Proyectado del Mercado · Puerto Rico (Índice)</div>
+          <div class="chart-bars" id="chartBars">
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">Base</div>
+              <div class="chart-bar" style="height:60px"></div>
+              <div class="chart-bar-label">2022</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">+8%</div>
+              <div class="chart-bar" style="height:72px"></div>
+              <div class="chart-bar-label">2023</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">+15%</div>
+              <div class="chart-bar" style="height:84px"></div>
+              <div class="chart-bar-label">2024</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">+24%</div>
+              <div class="chart-bar" style="height:96px;background:linear-gradient(to top,rgba(200,169,110,0.5),var(--gold-light));"></div>
+              <div class="chart-bar-label">2025E</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">+35%</div>
+              <div class="chart-bar" style="height:112px;border:2px dashed var(--gold);background:rgba(200,169,110,0.05);border-top:2px solid var(--gold);"></div>
+              <div class="chart-bar-label">2026P</div>
+            </div>
+            <div class="chart-bar-wrap">
+              <div class="chart-bar-val">+50%</div>
+              <div class="chart-bar" style="height:130px;border:2px dashed var(--gold);background:rgba(200,169,110,0.04);border-top:2px solid var(--gold-light);"></div>
+              <div class="chart-bar-label">2028P</div>
+            </div>
+          </div>
+          <div class="chart-note">E = Estimado · P = Proyectado · Basado en datos de mercado de infraestructura hídrica de Puerto Rico, crecimiento de construcción y regulaciones AAA vigentes.</div>
+        </div>
+      </div>
+
+      <!-- Growth Drivers -->
+      <div class="growth-items">
+        <div class="growth-item">
+          <span class="growth-icon">🏗️</span>
+          <div>
+            <div class="growth-title">Boom de Construcción</div>
+            <div class="growth-desc">Miles de unidades residenciales y hoteles en desarrollo activo en Puerto Rico requieren sistemas de bombeo nuevos certificados.</div>
+          </div>
+          <div class="growth-pct">↑18%</div>
+        </div>
+        <div class="growth-item">
+          <span class="growth-icon">⚠️</span>
+          <div>
+            <div class="growth-title">Crisis de la AAA</div>
+            <div class="growth-desc">La degradación de la red pública obliga a propiedades existentes a instalar sistemas privados de presión y almacenamiento.</div>
+          </div>
+          <div class="growth-pct">↑32%</div>
+        </div>
+        <div class="growth-item">
+          <span class="growth-icon">⚡</span>
+          <div>
+            <div class="growth-title">Modernización Eléctrica</div>
+            <div class="growth-desc">Los fondos FEMA post-huracanes financian modernización de sistemas en municipios y plantas industriales de toda la isla.</div>
+          </div>
+          <div class="growth-pct">↑25%</div>
+        </div>
+        <div class="growth-item">
+          <span class="growth-icon">🏭</span>
+          <div>
+            <div class="growth-title">Expansión Industrial</div>
+            <div class="growth-desc">Nuevas plantas farmacéuticas y de manufactura en Puerto Rico requieren sistemas de bombeo especializados de alta precisión.</div>
+          </div>
+          <div class="growth-pct">↑21%</div>
+        </div>
+        <div class="growth-item">
+          <span class="growth-icon">📋</span>
+          <div>
+            <div class="growth-title">Regulación NFPA</div>
+            <div class="growth-desc">Nuevas exigencias de sistemas contra incendios en edificios existentes generan demanda obligatoria de reemplazo.</div>
+          </div>
+          <div class="growth-pct">↑14%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="forecast-disclaimer reveal">
+      <strong style="color:var(--gold)">Aviso Legal:</strong> Las proyecciones presentadas son estimaciones basadas en tendencias de mercado, datos públicos de la industria y análisis interno de L.A.M. Services LLC. No constituyen garantía de rendimiento. Los resultados reales pueden variar. La información financiera detallada está disponible exclusivamente bajo acuerdo de confidencialidad (NDA) para inversionistas calificados.
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST FORM -->
+<section class="request-section reveal" id="solicitar">
+  <div class="request-inner">
+    <div class="section-label">Acceso Inversionistas</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:8px;">Solicitar <strong>Información Detallada</strong></h2>
+    <p style="text-align:center;font-family: 'Inter', sans-serif;font-size:16px;color:#90aac4;margin-bottom:36px;">Revisamos cada solicitud manualmente. Responderemos en 48 horas hábiles.</p>
+
+    <div class="form-box">
+      <div class="form-box-header">
+        <div class="form-box-title"><span data-i18n="inv.form.title">Formulario de Calificación</span></div>
+        <div class="form-box-sub">🔒 Su información es confidencial y nunca será compartida con terceros.</div>
+      </div>
+      <div class="form-box-body" id="formBody">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-input" id="inv_name" placeholder="Nombre Apellido">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Empresa / Organización</label>
+            <input type="text" class="form-input" id="inv_company" placeholder="Nombre de empresa (opcional)">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" id="inv_email" placeholder="su@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-input" id="inv_phone" placeholder="(787) 000-0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Perfil de Inversionista</label>
+          <select class="form-input" id="inv_type">
+            <option value="">Seleccione su perfil</option>
+            <option>Inversionista Individual</option>
+            <option>Family Office</option>
+            <option>Fondo de Inversión / Private Equity</option>
+            <option>Empresa Estratégica / Partner</option>
+            <option>Banco o Institución Financiera</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Capacidad de Inversión Aproximada</label>
+          <select class="form-input" id="inv_amount">
+            <option value="">Seleccione rango</option>
+            <option>Menos de $100,000</option>
+            <option>$100,000 – $500,000</option>
+            <option>$500,000 – $1,000,000</option>
+            <option>$1,000,000 – $5,000,000</option>
+            <option>Más de $5,000,000</option>
+            <option>Prefiero no especificar</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">¿Qué le interesa explorar? (Opcional)</label>
+          <textarea class="form-input" id="inv_message" placeholder="Participación, adquisición, partnership estratégico, financiamiento, otro..."></textarea>
+        </div>
+        <div class="form-privacy">Su información es manejada con absoluta discreción. No compartimos datos con terceros. La información financiera detallada se provee únicamente bajo NDA firmado.</div>
+        <button class="btn-submit" onclick="submitForm()"><span data-i18n="inv.form.btn">Enviar Solicitud de Información →</span></button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <div class="form-success-title">Solicitud Recibida</div>
+        <div class="form-success-sub">Revisaremos su perfil y nos comunicaremos en las próximas 48 horas hábiles. Gracias por su interés en L.A.M. Services LLC.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo">L.A.M. Services LLC</div>
+      <div class="footer-tagline">Pump Experts · Puerto Rico · Est. 1993</div>
+      <p class="footer-desc">Empresa líder en sistemas de bombeo en Puerto Rico con más de 30 años de historia, 500+ proyectos y relaciones con las mejores marcas mundiales.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Empresa</div>
+      <ul class="footer-links">
+        <li><a href="index.html#about"><span data-i18n="nav.nosotros">Nosotros</span></a></li>
+        <li><a href="index.html#services"><span data-i18n="nav.servicios">Servicios</span></a></li>
+        <li><a href="productos.html"><span data-i18n="nav.productos">Productos</span></a></li>
+        <li><a href="index.html#contact"><span data-i18n="nav.contacto">Contacto</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto Directo</div>
+      <ul class="footer-links">
+        <li><a href="tel:+17875551234">(787) 555-1234</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#bdd4d3dbd2fdd1dcd0ced8cfcbd4ded8ced1d1de93ded2d0"><span class="__cf_email__" data-cfemail="c2abaca4ad82aea3afb1a7b0b4aba1a7b1aeaea1eca1adaf">[email&#160;protected]</span></a></li>
+        <li><a href="https://wa.link/dni2dj" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy"><span data-i18n="footer.copy">© 2026 L.A.M. Services LLC · Todos los derechos reservados · Puerto Rico</span></div>
+    <div class="footer-badge"><span>Confidencial</span><span><span data-i18n="nav.inversionistas">Inversionistas</span></span></div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  if (cursor && ring && window.matchMedia('(pointer: fine)').matches) {
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+    (function tick(){
+      cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';
+      rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
+      ring.style.left=rx-16+'px';ring.style.top=ry-16+'px';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>ring.style.transform='scale(1.8)');
+      el.addEventListener('mouseleave',()=>ring.style.transform='scale(1)');
+    });
+  }
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e,i) => {
+      if (e.isIntersecting) { setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+  setTimeout(() => document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible')), 1000);
+
+  // Form submit
+  function submitForm() {
+    const name = document.getElementById('inv_name').value.trim();
+    const email = document.getElementById('inv_email').value.trim();
+    const type = document.getElementById('inv_type').value;
+    if (!name || !email || !type) {
+      alert('Por favor complete los campos obligatorios: Nombre, Email y Perfil de Inversionista.');
+      return;
+    }
+    document.
