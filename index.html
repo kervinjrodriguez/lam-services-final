@@ -148,11 +148,11 @@
     right: 5%; top: 50%; transform: translateY(-50%);
     width: 420px; height: 420px;
     display: grid;
-    grid-template-columns: 1.3fr 1.3fr 1fr 1fr;
-    grid-template-rows: 1fr 1.15fr 1.15fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
     z-index: 0;
-    opacity: 0.55;
+    opacity: 0.6;
   }
   /* Organic float keyframes for individual blocks */
   @keyframes floatA {
@@ -189,9 +189,10 @@
   .hd-8 { grid-column: 1 / 2; grid-row: 3 / 4; background: #7fd85a; opacity: 0.65; animation: decoIn 0.6s 0.3s both, floatB 6.5s 1.6s ease-in-out infinite; }
   /* Row 3–4 — tall right green */
   .hd-9 { grid-column: 4 / 5; grid-row: 3 / 5; background: #7fd85a; opacity: 0.75; animation: decoIn 0.6s 0.45s both, floatA 8.5s 1.2s ease-in-out infinite; }
-  /* Row 4 — bottom greens (cols 2-3 only, col 1 empty like real logo) */
-  .hd-10 { grid-column: 2 / 3; grid-row: 4 / 5; background: #7fd85a; opacity: 0.7; animation: decoIn 0.6s 0.5s both, floatC 7s 1.7s ease-in-out infinite; }
-  .hd-11 { grid-column: 3 / 4; grid-row: 4 / 5; background: #7fd85a; opacity: 0.8; animation: decoIn 0.6s 0.55s both, floatA 9s 1.4s ease-in-out infinite; }
+  /* Row 4 — bottom greens */
+  .hd-10 { grid-column: 1 / 2; grid-row: 4 / 5; background: #7fd85a; opacity: 0.7; animation: decoIn 0.6s 0.5s both, floatD 8s 1.7s ease-in-out infinite; }
+  .hd-11 { grid-column: 2 / 3; grid-row: 4 / 5; background: #7fd85a; opacity: 0.75; animation: decoIn 0.6s 0.55s both, floatC 7s 1.4s ease-in-out infinite; }
+  .hd-12 { grid-column: 3 / 4; grid-row: 4 / 5; background: #7fd85a; opacity: 0.8; animation: decoIn 0.6s 0.6s both, floatA 9s 1.8s ease-in-out infinite; }
   @keyframes decoIn {
     from { opacity: 0; transform: scale(0.7) translateY(16px); }
     to { opacity: var(--o, 0.7); transform: scale(1) translateY(0); }
@@ -2122,6 +2123,7 @@
     <div class="hd hd-9"></div>
     <div class="hd hd-10"></div>
     <div class="hd hd-11"></div>
+    <div class="hd hd-12"></div>
   </div>
   <div class="hero-grid"></div>
 
